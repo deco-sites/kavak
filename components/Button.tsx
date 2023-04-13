@@ -4,6 +4,7 @@ interface Props {
   href: string;
   children: ComponentChildren;
   type: "primary" | "secondary";
+  style?: string;
 }
 
 const typeClasses: Record<Props["type"], string> = {
@@ -14,9 +15,9 @@ const typeClasses: Record<Props["type"], string> = {
 };
 
 export default function Button(props: Props) {
-  const { href, type, children } = props;
-  const baseClasses = "text-md px-20 py-3 inline-block rounded-lg";
-  const classes = `${baseClasses} ${typeClasses[type]}`;
+  const { href, type, children, style } = props;
+  const baseClasses = "text-md px-4 md:px-20 py-3 inline-block rounded-lg";
+  const classes = `${style} ${baseClasses} ${typeClasses[type]}`;
 
   return (
     <a href={href} class={classes}>
