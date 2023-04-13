@@ -6,8 +6,10 @@ import config from "./deno.json" assert { type: "json" };
 import { DecoManifest } from "$live/types.ts";
 
 import * as $$$$0 from "./routes/_app.tsx";
+import * as $$$$$0 from "./islands/Header.tsx";
 import * as $$$$$$$$0 from "./sections/Head.tsx";
 import * as $$$$$$$$1 from "./sections/Hero.tsx";
+import * as $$$$$$$$2 from "./sections/Header.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_editorData from "$live/routes/live/editorData.ts";
@@ -42,9 +44,13 @@ const manifest: DecoManifest = {
     "./routes/live/previews/[...block].tsx": $live_previews,
     "./routes/[...catchall].tsx": $live_catchall,
   },
+  "islands": {
+    "./islands/Header.tsx": $$$$$0,
+  },
   "sections": {
     "deco-sites/kavak/sections/Head.tsx": $$$$$$$$0,
     "deco-sites/kavak/sections/Hero.tsx": $$$$$$$$1,
+    "deco-sites/kavak/sections/Header.tsx": $$$$$$$$2,
     "$live/sections/PageInclude.tsx": i1$$$0,
   },
   "handlers": {
@@ -69,7 +75,6 @@ const manifest: DecoManifest = {
     "$live/flags/audience.ts": i1$$$$$0,
     "$live/flags/everyone.ts": i1$$$$$1,
   },
-  "islands": {},
   "config": config,
   "baseUrl": import.meta.url,
 };
