@@ -13,32 +13,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9zdGFydC9mdW5jdGlvbnMvTG9hZEdpdEh1YlJhdy50cw==@Props": {
-      "type": "object",
-      "properties": {
-        "repo": {
-          "type": "string",
-          "description": "Complete user/repo format",
-          "title": "Repo"
-        },
-        "branch": {
-          "type": "string",
-          "description": "Branch",
-          "title": "Branch"
-        },
-        "path": {
-          "type": "string",
-          "description": "Path to fetch, or leave blank and add :path route param.",
-          "title": "Path"
-        }
-      },
-      "required": [
-        "repo",
-        "branch",
-        "path"
-      ],
-      "title": "deco-sites/start/functions/LoadGitHubRaw.ts@Props"
-    },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag": {
       "$ref": "#/root/flags",
       "title": "Flag"
@@ -168,7 +142,7 @@
       ],
       "title": "deco-cx/live/pages/LivePage.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9IZWFkLnRzeA==@Props": {
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "title": {
@@ -191,13 +165,6 @@
           "type": "string",
           "title": "Favicon Url"
         },
-        "styleUrls": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "Style Urls"
-        },
         "themeColor": {
           "type": "string",
           "title": "Theme Color"
@@ -209,24 +176,9 @@
         "url",
         "imageUrl",
         "faviconUrl",
-        "styleUrls",
         "themeColor"
       ],
-      "title": "deco-sites/start/sections/Head.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9HZXRTdGFydGVkLnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "enableInspectVSCode": {
-          "type": [
-            "boolean",
-            "null"
-          ],
-          "title": "Enable Inspect V S Code"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/start/sections/GetStarted.tsx@Props"
+      "title": "deco-sites/kavak/sections/Head.tsx@Props"
     },
     "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props": {
       "type": "object",
@@ -421,27 +373,6 @@
       "required": [],
       "title": "deco-cx/live/flags/everyone.ts@EveryoneConfig"
     },
-    "ZGVjby1zaXRlcy9zdGFydC9mdW5jdGlvbnMvTG9hZEdpdEh1YlJhdy50cw==": {
-      "title": "deco-sites/start/functions/LoadGitHubRaw.ts",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydC9mdW5jdGlvbnMvTG9hZEdpdEh1YlJhdy50cw==@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/start/functions/LoadGitHubRaw.ts"
-          ],
-          "default": "deco-sites/start/functions/LoadGitHubRaw.ts"
-        }
-      }
-    },
     "JGxpdmUvaGFuZGxlcnMvcm91dGVzU2VsZWN0aW9uLnRz": {
       "title": "$live/handlers/routesSelection.ts",
       "type": "object",
@@ -547,12 +478,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9IZWFkLnRzeA==": {
-      "title": "deco-sites/start/sections/Head.tsx",
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==": {
+      "title": "deco-sites/kavak/sections/Head.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9IZWFkLnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==@Props"
         }
       ],
       "required": [
@@ -562,30 +493,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/start/sections/Head.tsx"
+            "deco-sites/kavak/sections/Head.tsx"
           ],
-          "default": "deco-sites/start/sections/Head.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9HZXRTdGFydGVkLnRzeA==": {
-      "title": "deco-sites/start/sections/GetStarted.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9HZXRTdGFydGVkLnRzeA==@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/start/sections/GetStarted.tsx"
-          ],
-          "default": "deco-sites/start/sections/GetStarted.tsx"
+          "default": "deco-sites/kavak/sections/Head.tsx"
         }
       }
     },
@@ -825,17 +735,6 @@
     }
   },
   "root": {
-    "functions": {
-      "title": "functions",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/Resolvable"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydC9mdW5jdGlvbnMvTG9hZEdpdEh1YlJhdy50cw=="
-        }
-      ]
-    },
     "handlers": {
       "title": "handlers",
       "anyOf": [
@@ -874,10 +773,7 @@
           "$ref": "#/definitions/Resolvable"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9IZWFkLnRzeA=="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydC9zZWN0aW9ucy9HZXRTdGFydGVkLnRzeA=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA=="
         },
         {
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvUGFnZUluY2x1ZGUudHN4"
@@ -951,9 +847,6 @@
       },
       "additionalProperties": {
         "anyOf": [
-          {
-            "$ref": "#/root/functions"
-          },
           {
             "$ref": "#/root/handlers"
           },
