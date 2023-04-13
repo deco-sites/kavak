@@ -10,6 +10,8 @@ import type {
 export interface Props {
   title: string;
   description: HTML;
+  /** @default false */
+  hideDescriptionOnMobile?: boolean;
   /** @default blue */
   theme: "blue" | "white";
   actions: {
@@ -56,7 +58,14 @@ export interface Props {
 }
 
 export default function Hero(props: Props) {
-  const { actions, description, height, images, theme, title } = props;
+  const {
+    actions,
+    description,
+    images,
+    theme,
+    title,
+    height,
+  } = props;
 
   return (
     <div class={generateContainerClasses(props)}>
@@ -64,12 +73,10 @@ export default function Hero(props: Props) {
 
       <div class={generateInnerContainerClasses(props)}>
         <div class="flex flex-col gap-6 md:max-w-[400px] lg:max-w-[600px] w-full">
-          <h1 class="font-title text-2xl md:text-4xl text-center md:text-left">
-            {title}
-          </h1>
+          <h1 class={generateTitleClasses(props)}>{title}</h1>
 
           <div
-            class="hidden md:block text-2xl"
+            class={generateDescriptionClasses(props)}
             dangerouslySetInnerHTML={{ __html: description }}
           />
 
@@ -101,6 +108,28 @@ export default function Hero(props: Props) {
             </div>
           )}
         </div>
+
+        {images.detail && (
+          <Picture>
+            <source
+              src={images.detail.mobile}
+              media="(max-width: 767px)"
+            />
+            <source
+              src={images.detail.tablet}
+              media="(min-width: 768px) and (max-width: 1023px)"
+            />
+            <source
+              src={images.detail.desktop}
+              media="(min-width: 1024px)"
+            />
+            <img
+              alt={title}
+              src={images.detail.desktop}
+              class="w-full h-full object-contain"
+            />
+          </Picture>
+        )}
       </div>
     </div>
   );
@@ -172,6 +201,7 @@ function generateInnerContainerClasses(props: Props) {
   const { images } = props;
   const isTabletDetailOnRight = images.detailPositon?.tablet === "right";
   const isDesktopDetailOnRight = images.detailPositon?.desktop === "right";
+  const isMobileDetailOnTop = images.detailPositon?.mobile === "top";
 
   const classes = [
     // base classes
@@ -179,10 +209,12 @@ function generateInnerContainerClasses(props: Props) {
     "z-10",
     "w-full",
     "max-w-[1320px]",
+    "justify-between",
 
     // positioning
-    isTabletDetailOnRight ? "md:justify-start" : "md:justify-end",
-    isDesktopDetailOnRight ? "lg:justify-start" : "lg:justify-end",
+    isTabletDetailOnRight ? "md:flex-row" : "md:flex-row-reverse",
+    isDesktopDetailOnRight ? "lg:flex-row" : "lg:flex-row-reverse",
+    isMobileDetailOnTop ? "flex-col-reverse" : "flex-col",
   ];
 
   return classes.join(" ");
@@ -203,6 +235,33 @@ function generateBackgroundImageClasses(props: Props) {
     "top-0",
     "left-0",
     "z-0",
+  ];
+
+  return classes.join(" ");
+}
+
+function generateTitleClasses(props: Props) {
+  const { hideDescriptionOnMobile } = props;
+
+  const classes = [
+    hideDescriptionOnMobile ? "text-center" : "text-left",
+    hideDescriptionOnMobile ? "text-2xl" : "text-3xl",
+    "font-title",
+    "md:text-4xl",
+    "md:text-left",
+  ];
+
+  return classes.join(" ");
+}
+
+function generateDescriptionClasses(props: Props) {
+  const { hideDescriptionOnMobile } = props;
+
+  const classes = [
+    hideDescriptionOnMobile ? "hidden" : "block",
+    "md:block",
+    "text-lg",
+    "md:text-2xl",
   ];
 
   return classes.join(" ");
