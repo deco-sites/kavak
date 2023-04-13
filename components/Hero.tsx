@@ -25,13 +25,13 @@ export interface Props {
     };
   };
   /** @description value in pixels */
-  height: {
+  height?: {
     /** @default 500 */
-    desktop: number;
+    desktop?: number;
     /** @default 500 */
-    tablet: number;
+    tablet?: number;
     /** @default 500 */
-    mobile: number;
+    mobile?: number;
   };
   images: {
     background?: {
@@ -64,7 +64,6 @@ export default function Hero(props: Props) {
     images,
     theme,
     title,
-    height,
   } = props;
 
   return (
@@ -110,16 +109,19 @@ export default function Hero(props: Props) {
         </div>
 
         {images.detail && (
-          <Picture>
-            <source
+          <Picture class={generateDetailClasses(props)}>
+            <Source
+              width={375}
               src={images.detail.mobile}
               media="(max-width: 767px)"
             />
-            <source
+            <Source
+              width={768}
               src={images.detail.tablet}
               media="(min-width: 768px) and (max-width: 1023px)"
             />
-            <source
+            <Source
+              width={1440}
               src={images.detail.desktop}
               media="(min-width: 1024px)"
             />
@@ -136,26 +138,23 @@ export default function Hero(props: Props) {
 }
 
 function BackgroundImage(props: Props) {
-  const { height, images, title } = props;
+  const { images, title } = props;
 
   return (
     <Picture class={generateBackgroundImageClasses(props)}>
       <Source
         src={images.background!.mobile}
         width={375}
-        height={height.mobile}
         media="(max-width: 767px)"
       />
       <Source
         src={images.background!.tablet}
         width={768}
-        height={height.tablet}
         media="(min-width: 768px) and (max-width: 1023px)"
       />
       <Source
         src={images.background!.desktop}
         width={1440}
-        height={height.desktop}
         media="(min-width: 1024px)"
       />
 
@@ -174,9 +173,9 @@ function generateContainerClasses(props: Props) {
 
   const classes = [
     // height classes
-    `h-[${height.mobile}px]`,
-    `md:h-[${height.tablet}px]`,
-    `lg:h-[${height.desktop}px]`,
+    height?.mobile ? `h-[${height.mobile}px]` : "h-full",
+    height?.tablet ? `md:h-[${height.tablet}px]` : "md:h-full",
+    height?.desktop ? `lg:h-[${height.desktop}px]` : "lg:h-full",
 
     // paddings
     "p-8",
@@ -191,7 +190,7 @@ function generateContainerClasses(props: Props) {
 
     // colors
     theme === "blue" ? "bg-primary" : "bg-white",
-    theme === "blue" ? "text-white" : "text-primary",
+    theme === "blue" ? "text-white" : "text-primary-dark",
   ];
 
   return classes.join(" ");
@@ -208,6 +207,8 @@ function generateInnerContainerClasses(props: Props) {
     "flex",
     "z-10",
     "w-full",
+    "relative",
+    "items-center",
     "max-w-[1320px]",
     "justify-between",
 
@@ -226,9 +227,9 @@ function generateBackgroundImageClasses(props: Props) {
   const classes = [
     // height classes
     "w-full",
-    `h-[${height.mobile}px]`,
-    `md:h-[${height.tablet}px]`,
-    `lg:h-[${height.desktop}px]`,
+    height?.mobile ? `h-[${height.mobile}px]` : "h-full",
+    height?.tablet ? `md:h-[${height.tablet}px]` : "md:h-full",
+    height?.desktop ? `lg:h-[${height.desktop}px]` : "lg:h-full",
 
     // positioning
     "absolute",
@@ -262,6 +263,19 @@ function generateDescriptionClasses(props: Props) {
     "md:block",
     "text-lg",
     "md:text-2xl",
+  ];
+
+  return classes.join(" ");
+}
+
+function generateDetailClasses(props: Props) {
+  const { images } = props;
+
+  const classes = [
+    "mt-6",
+    "md:mt-0",
+    "md:mx-12",
+    images.detailClasses,
   ];
 
   return classes.join(" ");

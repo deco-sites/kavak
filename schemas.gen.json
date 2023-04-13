@@ -271,23 +271,28 @@
           "type": "object",
           "properties": {
             "desktop": {
-              "type": "number",
+              "type": [
+                "number",
+                "null"
+              ],
               "title": "Desktop"
             },
             "tablet": {
-              "type": "number",
+              "type": [
+                "number",
+                "null"
+              ],
               "title": "Tablet"
             },
             "mobile": {
-              "type": "number",
+              "type": [
+                "number",
+                "null"
+              ],
               "title": "Mobile"
             }
           },
-          "required": [
-            "desktop",
-            "tablet",
-            "mobile"
-          ],
+          "required": [],
           "title": "Height",
           "description": "value in pixels"
         },
@@ -410,7 +415,6 @@
         "description",
         "theme",
         "actions",
-        "height",
         "images"
       ],
       "title": "deco-sites/kavak/components/Hero.tsx@Props"
