@@ -752,6 +752,65 @@
       ],
       "title": "deco-sites/kavak/components/StoreCards.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0ZlYXR1cmVzLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "cards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "image": {
+                "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+                "title": "Image"
+              },
+              "title": {
+                "type": "string",
+                "title": "Title"
+              },
+              "description": {
+                "type": "string",
+                "title": "Description"
+              }
+            },
+            "required": [
+              "image",
+              "title",
+              "description"
+            ]
+          },
+          "title": "Cards"
+        },
+        "action": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string",
+              "title": "Label"
+            },
+            "href": {
+              "type": "string",
+              "title": "Href"
+            }
+          },
+          "required": [
+            "label",
+            "href"
+          ],
+          "title": "Action"
+        }
+      },
+      "required": [
+        "title",
+        "cards",
+        "action"
+      ],
+      "title": "deco-sites/kavak/components/Features.tsx@Props"
+    },
     "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props": {
       "type": "object",
       "properties": {
@@ -1176,6 +1235,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9GZWF0dXJlcy50c3g=": {
+      "title": "deco-sites/kavak/sections/Features.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0ZlYXR1cmVzLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/kavak/sections/Features.tsx"
+          ],
+          "default": "deco-sites/kavak/sections/Features.tsx"
+        }
+      }
+    },
     "JGxpdmUvc2VjdGlvbnMvUGFnZUluY2x1ZGUudHN4": {
       "title": "$live/sections/PageInclude.tsx",
       "type": "object",
@@ -1474,6 +1554,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9TdG9yZUNhcmRzLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9GZWF0dXJlcy50c3g="
         },
         {
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvUGFnZUluY2x1ZGUudHN4"
