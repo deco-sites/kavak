@@ -60,13 +60,12 @@ export default function Header(props: Props) {
 function renderLink(link: Link, noChildren = false) {
   return (
     <li class="flex flex-row gap-2 items-center group text-[#333] hover:text-primary-dark relative">
-      <a href={link.href} class="flex flex-row gap-2">
+      <a href={link.href} class="flex flex-row gap-2 items-center">
         {link.icon && (
           <Icon
-            width={24}
-            height={24}
+            width={20}
+            height={20}
             id={link.icon}
-            strokeWidth={1}
           />
         )}
 
