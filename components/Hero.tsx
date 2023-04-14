@@ -127,6 +127,8 @@ export default function Hero(props: Props) {
             />
             <img
               alt={title}
+              width="100%"
+              height="100%"
               src={images.detail.desktop}
               class="w-full h-full object-contain"
             />
