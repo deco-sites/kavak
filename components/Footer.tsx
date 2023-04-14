@@ -15,11 +15,12 @@ export default function Footer(props: Props) {
       <div class="w-full text-white max-w-[1340px] p-4 m-auto">
         <div class="flex flex-wrap -m-4">
           <div class="relative w-full lg:flex-shrink-0 lg:flex-grow-0 p-4">
-            <a
-              href="/"
-              class="block text-blue-600 bg-transparent cursor-pointer"
-            >
-              <span>logo</span>
+            <a href="/" alt="Kavak" title="Kavak" class="hidden lg:block">
+              <Icon id="Logo" width={112} height={30} />
+            </a>
+
+            <a href="/" alt="Kavak" title="Kavak" class="block lg:hidden">
+              <Icon id="Logo" width={76} height={20} />
             </a>
           </div>
 
