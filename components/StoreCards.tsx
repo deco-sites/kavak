@@ -30,6 +30,7 @@ export default function StoreCards(props: Props) {
               <img
                 width={300}
                 height={168}
+                loading="lazy"
                 alt={store.name}
                 src={store.image}
                 class="object-cover w-full md:w-[300px] h-[168px] block"

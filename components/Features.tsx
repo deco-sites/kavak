@@ -38,6 +38,7 @@ export default function Features(props: Props) {
                   <img
                     width={300}
                     height={235}
+                    loading="eager"
                     alt={card.title}
                     src={card.image}
                     class="object-cover w-[350px] h-[235px] block"
