@@ -55,7 +55,6 @@ export default function Features(props: Props) {
 
           <div
             data-slide="prev"
-            aria-label="Previous item"
             class="flex justify-center items-center absolute z-10 h-[calc(100%-24px)] bg-black top-[12px] left-0 w-[48px] cursor-pointer opacity-60"
           >
             <Icon
@@ -68,7 +67,6 @@ export default function Features(props: Props) {
 
           <div
             data-slide="next"
-            aria-label="Next item"
             class="flex justify-center items-center absolute z-10 h-[calc(100%-24px)] bg-black top-[12px] right-0 w-[48px] cursor-pointer opacity-60"
           >
             <Icon
