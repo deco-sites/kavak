@@ -27,8 +27,12 @@ export default function Header(props: Props) {
   return (
     <div class="h-[56px] lg:h-[84px] flex justify-center bg-primary-light w-full">
       <div class="w-full max-w-[1320px] flex flex-row items-center justify-between px-4">
-        <a href="/" alt="Kavak" title="Kavak">
+        <a href="/" alt="Kavak" title="Kavak" class="hidden lg:block">
           <Icon id="Logo" width={112} height={30} />
+        </a>
+
+        <a href="/" alt="Kavak" title="Kavak" class="block lg:hidden">
+          <Icon id="Logo" width={76} height={20} />
         </a>
 
         {/** DESKTOP MENU */}
