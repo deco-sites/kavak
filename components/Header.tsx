@@ -27,8 +27,12 @@ export default function Header(props: Props) {
   return (
     <div class="h-[56px] lg:h-[84px] flex justify-center bg-primary-light w-full">
       <div class="w-full max-w-[1320px] flex flex-row items-center justify-between px-4">
-        <a href="/" alt="Kavak" title="Kavak">
+        <a href="/" alt="Kavak" title="Kavak" class="hidden lg:block">
           <Icon id="Logo" width={112} height={30} />
+        </a>
+
+        <a href="/" alt="Kavak" title="Kavak" class="block lg:hidden">
+          <Icon id="Logo" width={76} height={20} />
         </a>
 
         {/** DESKTOP MENU */}
@@ -60,13 +64,12 @@ export default function Header(props: Props) {
 function renderLink(link: Link, noChildren = false) {
   return (
     <li class="flex flex-row gap-2 items-center group text-[#333] hover:text-primary-dark relative">
-      <a href={link.href} class="flex flex-row gap-2">
+      <a href={link.href} class="flex flex-row gap-2 items-center">
         {link.icon && (
           <Icon
-            width={24}
-            height={24}
+            width={20}
+            height={20}
             id={link.icon}
-            strokeWidth={1}
           />
         )}
 

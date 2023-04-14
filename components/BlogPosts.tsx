@@ -30,6 +30,7 @@ export default function BlogPosts(props: Props) {
                 <img
                   width={200}
                   height={133}
+                  loading="lazy"
                   src={post.image}
                   alt={post.title}
                   class="object-cover w-[200px] h-[133px] block"

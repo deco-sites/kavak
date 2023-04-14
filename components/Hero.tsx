@@ -10,6 +10,7 @@ import type {
 export interface Props {
   title: string;
   description: HTML;
+  fcp: boolean;
   /** @default false */
   hideDescriptionOnMobile?: boolean;
   /** @default blue */
@@ -64,6 +65,7 @@ export default function Hero(props: Props) {
     images,
     theme,
     title,
+    fcp,
   } = props;
 
   return (
@@ -109,7 +111,7 @@ export default function Hero(props: Props) {
         </div>
 
         {images.detail && (
-          <Picture class={generateDetailClasses(props)}>
+          <Picture preload={fcp} class={generateDetailClasses(props)}>
             <Source
               width={375}
               src={images.detail.mobile}
@@ -127,7 +129,10 @@ export default function Hero(props: Props) {
             />
             <img
               alt={title}
+              width="100%"
+              height="100%"
               src={images.detail.desktop}
+              loading={fcp ? "eager" : "lazy"}
               class="w-full h-full object-contain"
             />
           </Picture>

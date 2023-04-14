@@ -7,6 +7,7 @@ import { DecoManifest } from "$live/types.ts";
 
 import * as $$$$0 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Header.tsx";
+import * as $$$$$1 from "./islands/SliderJS.tsx";
 import * as $$$$$$$$0 from "./sections/Head.tsx";
 import * as $$$$$$$$1 from "./sections/Hero.tsx";
 import * as $$$$$$$$2 from "./sections/Header.tsx";
@@ -49,6 +50,7 @@ const manifest: DecoManifest = {
   },
   "islands": {
     "./islands/Header.tsx": $$$$$0,
+    "./islands/SliderJS.tsx": $$$$$1,
   },
   "sections": {
     "deco-sites/kavak/sections/Head.tsx": $$$$$$$$0,
