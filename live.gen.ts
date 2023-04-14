@@ -14,6 +14,7 @@ import * as $$$$$$$$2 from "./sections/Header.tsx";
 import * as $$$$$$$$3 from "./sections/BlogPosts.tsx";
 import * as $$$$$$$$4 from "./sections/StoreCards.tsx";
 import * as $$$$$$$$5 from "./sections/Features.tsx";
+import * as $$$$$$$$6 from "./sections/Footer.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_editorData from "$live/routes/live/editorData.ts";
@@ -59,6 +60,7 @@ const manifest: DecoManifest = {
     "deco-sites/kavak/sections/BlogPosts.tsx": $$$$$$$$3,
     "deco-sites/kavak/sections/StoreCards.tsx": $$$$$$$$4,
     "deco-sites/kavak/sections/Features.tsx": $$$$$$$$5,
+    "deco-sites/kavak/sections/Footer.tsx": $$$$$$$$6,
     "$live/sections/PageInclude.tsx": i1$$$0,
   },
   "handlers": {

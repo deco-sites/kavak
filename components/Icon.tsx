@@ -10,7 +10,10 @@ export type AvailableIcons =
   | "Bars3"
   | "XMark"
   | "Logo"
-  | "Brasil";
+  | "Brasil"
+  | "Facebook"
+  | "Instagram"
+  | "Linkedin";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
