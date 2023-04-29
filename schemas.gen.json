@@ -3430,29 +3430,31 @@
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category[]|null": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category[]"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "title": "Category[]|null"
-    },
-    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvQmxvZ0NhdGVnb3JpZXMudHN4@Props": {
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvQmxvZ0NhdGVnb3J5TWVudS50c3g=@Props": {
       "type": "object",
       "properties": {
         "categories": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category[]|null",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category[]",
           "title": "Categories"
         }
       },
       "required": [
         "categories"
       ],
-      "title": "deco-sites/kavak/components/blog/BlogCategories.tsx@Props"
+      "title": "deco-sites/kavak/components/blog/BlogCategoryMenu.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvQmxvZ0dhbGxlcnkudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPostList",
+          "title": "List"
+        }
+      },
+      "required": [
+        "list"
+      ],
+      "title": "deco-sites/kavak/components/blog/BlogGallery.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
       "type": "string",
@@ -3522,6 +3524,64 @@
         "action"
       ],
       "title": "deco-sites/kavak/components/BlogPosts.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvQmxvZ1NlY3Rpb24udHN4@Props": {
+      "type": "object",
+      "properties": {
+        "section": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPosts",
+          "title": "Section"
+        },
+        "variant": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "featured_posts"
+            },
+            {
+              "type": "string",
+              "const": "featured_places"
+            },
+            {
+              "type": "string",
+              "const": "featured_brands"
+            },
+            {
+              "type": "string",
+              "const": "featured_ads"
+            },
+            {
+              "type": "string",
+              "const": "featured_articles"
+            }
+          ],
+          "type": "string",
+          "title": "Variant"
+        }
+      },
+      "required": [
+        "section",
+        "variant"
+      ],
+      "title": "deco-sites/kavak/components/blog/BlogSection.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvQmxvZ1RvcFBsYWNlcy50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "categories": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPlaces",
+          "title": "Categories"
+        },
+        "searchTerms": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPlaces",
+          "title": "Search Terms"
+        }
+      },
+      "required": [
+        "categories",
+        "searchTerms"
+      ],
+      "title": "deco-sites/kavak/components/blog/BlogTopPlaces.tsx@Props"
     },
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0ZlYXR1cmVzLnRzeA==@Props": {
       "type": "object",
@@ -5312,12 +5372,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9CbG9nQ2F0ZWdvcmllcy50c3g=": {
-      "title": "deco-sites/kavak/sections/BlogCategories.tsx",
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9CbG9nQ2F0ZWdvcnlNZW51LnRzeA==": {
+      "title": "deco-sites/kavak/sections/BlogCategoryMenu.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvQmxvZ0NhdGVnb3JpZXMudHN4@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvQmxvZ0NhdGVnb3J5TWVudS50c3g=@Props"
         }
       ],
       "required": [
@@ -5327,9 +5387,30 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/kavak/sections/BlogCategories.tsx"
+            "deco-sites/kavak/sections/BlogCategoryMenu.tsx"
           ],
-          "default": "deco-sites/kavak/sections/BlogCategories.tsx"
+          "default": "deco-sites/kavak/sections/BlogCategoryMenu.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9CbG9nR2FsbGVyeS50c3g=": {
+      "title": "deco-sites/kavak/sections/BlogGallery.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvQmxvZ0dhbGxlcnkudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/kavak/sections/BlogGallery.tsx"
+          ],
+          "default": "deco-sites/kavak/sections/BlogGallery.tsx"
         }
       }
     },
@@ -5351,6 +5432,48 @@
             "deco-sites/kavak/sections/BlogPosts.tsx"
           ],
           "default": "deco-sites/kavak/sections/BlogPosts.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9CbG9nU2VjdGlvbi50c3g=": {
+      "title": "deco-sites/kavak/sections/BlogSection.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvQmxvZ1NlY3Rpb24udHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/kavak/sections/BlogSection.tsx"
+          ],
+          "default": "deco-sites/kavak/sections/BlogSection.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9CbG9nVG9wUGxhY2VzLnRzeA==": {
+      "title": "deco-sites/kavak/sections/BlogTopPlaces.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvQmxvZ1RvcFBsYWNlcy50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/kavak/sections/BlogTopPlaces.tsx"
+          ],
+          "default": "deco-sites/kavak/sections/BlogTopPlaces.tsx"
         }
       }
     },
@@ -6099,10 +6222,19 @@
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9CbG9nQ2F0ZWdvcmllcy50c3g="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9CbG9nQ2F0ZWdvcnlNZW51LnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9CbG9nR2FsbGVyeS50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9CbG9nUG9zdHMudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9CbG9nU2VjdGlvbi50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9CbG9nVG9wUGxhY2VzLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9GZWF0dXJlcy50c3g="

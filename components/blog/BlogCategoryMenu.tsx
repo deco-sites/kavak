@@ -2,15 +2,16 @@ import type { LoaderReturnType } from "$live/types.ts";
 import type { Category } from "deco-sites/std/commerce/butterCMS/types.ts";
 
 export interface Props {
-  categories: LoaderReturnType<Category[] | null>;
+  categories: LoaderReturnType<Category[]>;
 }
 
-function BlogCategories(props: Props) {
+function BlogCategoryMenu(props: Props) {
+  console.log(props);
   return (
     <div>
-      test
+      BlogCategoryMenu
     </div>
   );
 }
 
-export default BlogCategories;
+export default BlogCategoryMenu;
