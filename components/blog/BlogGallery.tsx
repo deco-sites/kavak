@@ -6,7 +6,6 @@ export interface Props {
 }
 
 function BlogGallery(props: Props) {
-  console.log(props);
   return (
     <div>
       BlogGallery

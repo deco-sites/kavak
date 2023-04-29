@@ -7,7 +7,6 @@ export interface Props {
 }
 
 function BlogTopPlaces(props: Props) {
-  console.log(props);
   return (
     <div>
       BlogTopPlaces

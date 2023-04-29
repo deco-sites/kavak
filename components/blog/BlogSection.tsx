@@ -10,7 +10,6 @@ export interface Props {
 }
 
 function BlogSection(props: Props) {
-  console.log(props);
   return (
     <div>
       BlogSection

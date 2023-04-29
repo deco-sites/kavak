@@ -6,7 +6,6 @@ export interface Props {
 }
 
 function BlogCategoryMenu(props: Props) {
-  console.log(props);
   return (
     <div>
       BlogCategoryMenu
