@@ -1,5 +1,5 @@
-import { Head } from "$fresh/runtime.ts";
 import type { BlogPostPreview } from "deco-sites/std/commerce/butterCMS/types.ts";
+import { AuthorLabel } from "deco-sites/kavak/components/ui/AuthorLabel.tsx";
 
 export interface Props {
   post: BlogPostPreview;
@@ -27,7 +27,7 @@ function PostItem(
     <article
       class={`${
         size === "large" ? "lg:max-w-full" : ""
-      } max-w-[326px] overflow-hidden rounded-md shadow-item flex w-full`}
+      } max-w-[326px] overflow-hidden rounded-md shadow-base flex w-full`}
     >
       <a href={`/blog/${post.slug}`} class="flex flex-col">
         <div class="flex items-center justify-center relative">
@@ -48,16 +48,10 @@ function PostItem(
           <h3 class="text-xl leading-5 font-bold">{post.title}</h3>
           {withAuthor
             ? (
-              <div>
-                <p>{post.author}</p>
-                {
-                  /**
-                   * When implemented the locale changer just create a island to get the locale and parse it
-                   * DO NOT add this whole component on island!
-                   */
-                }
-                <p>{post.publishedAt}</p>
-              </div>
+              <AuthorLabel
+                publishedDate={post.publishedAt}
+                author={post.author}
+              />
             )
             : null}
           {withSummary

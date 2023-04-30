@@ -24,7 +24,10 @@ export default {
     },
   },
   plugins: {
-    "shadow-item": {
+    "border-t-primary": {
+      "border-top-color": "#3374DB",
+    },
+    "shadow-base": {
       "box-shadow":
         "0 0.063rem 0.313rem 0 rgba(70,70,70,.15), 0 0.125rem 0.125rem 0 rgba(70,70,70,.15), 0 0.188rem 0.125rem -0.125rem rgba(70,70,70,.15)",
     },
