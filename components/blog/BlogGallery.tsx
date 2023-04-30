@@ -8,7 +8,6 @@ export interface Props {
 function BlogGallery(props: Props) {
   return (
     <div>
-      BlogGallery
     </div>
   );
 }

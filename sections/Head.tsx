@@ -32,6 +32,9 @@ export default function HeadComponent({
       <style
         dangerouslySetInnerHTML={{
           __html: `
+          body {
+            font-family: 'Vazirmatn', sans-serif
+          }
           /* latin-ext */
           @font-face {
             font-family: 'Vazirmatn';

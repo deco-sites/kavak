@@ -9,7 +9,6 @@ export interface Props {
 function BlogTopPlaces(props: Props) {
   return (
     <div>
-      BlogTopPlaces
     </div>
   );
 }
