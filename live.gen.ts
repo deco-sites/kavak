@@ -13,11 +13,12 @@ import * as $$$$$$$$2 from "./sections/Hero.tsx";
 import * as $$$$$$$$3 from "./sections/BlogCategoryMenu.tsx";
 import * as $$$$$$$$4 from "./sections/Features.tsx";
 import * as $$$$$$$$5 from "./sections/BlogPosts.tsx";
-import * as $$$$$$$$6 from "./sections/Footer.tsx";
-import * as $$$$$$$$7 from "./sections/Head.tsx";
-import * as $$$$$$$$8 from "./sections/BlogSection.tsx";
-import * as $$$$$$$$9 from "./sections/Header.tsx";
-import * as $$$$$$$$10 from "./sections/BlogGallery.tsx";
+import * as $$$$$$$$6 from "./sections/BlogPostDetail.tsx";
+import * as $$$$$$$$7 from "./sections/Footer.tsx";
+import * as $$$$$$$$8 from "./sections/Head.tsx";
+import * as $$$$$$$$9 from "./sections/BlogSection.tsx";
+import * as $$$$$$$$10 from "./sections/Header.tsx";
+import * as $$$$$$$$11 from "./sections/BlogGallery.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -111,14 +112,15 @@ const manifest = {
     "$live/sections/Slot.tsx": i2$$$$1,
     "$live/sections/UseSlot.tsx": i2$$$$2,
     "deco-sites/kavak/sections/BlogCategoryMenu.tsx": $$$$$$$$3,
-    "deco-sites/kavak/sections/BlogGallery.tsx": $$$$$$$$10,
+    "deco-sites/kavak/sections/BlogGallery.tsx": $$$$$$$$11,
+    "deco-sites/kavak/sections/BlogPostDetail.tsx": $$$$$$$$6,
     "deco-sites/kavak/sections/BlogPosts.tsx": $$$$$$$$5,
-    "deco-sites/kavak/sections/BlogSection.tsx": $$$$$$$$8,
+    "deco-sites/kavak/sections/BlogSection.tsx": $$$$$$$$9,
     "deco-sites/kavak/sections/BlogTopPlaces.tsx": $$$$$$$$1,
     "deco-sites/kavak/sections/Features.tsx": $$$$$$$$4,
-    "deco-sites/kavak/sections/Footer.tsx": $$$$$$$$6,
-    "deco-sites/kavak/sections/Head.tsx": $$$$$$$$7,
-    "deco-sites/kavak/sections/Header.tsx": $$$$$$$$9,
+    "deco-sites/kavak/sections/Footer.tsx": $$$$$$$$7,
+    "deco-sites/kavak/sections/Head.tsx": $$$$$$$$8,
+    "deco-sites/kavak/sections/Header.tsx": $$$$$$$$10,
     "deco-sites/kavak/sections/Hero.tsx": $$$$$$$$2,
     "deco-sites/kavak/sections/StoreCards.tsx": $$$$$$$$0,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$3,
