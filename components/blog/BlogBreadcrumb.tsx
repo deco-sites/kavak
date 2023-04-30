@@ -6,7 +6,7 @@ export interface Props {
 }
 
 function Slash() {
-  return <span aria-hidden="true" class="mx-1">/</span>;
+  return <span aria-hidden="true" class="mx-1 hidden lg:block">/</span>;
 }
 
 export function BlogBreadcrumb({ category, title }: Props) {

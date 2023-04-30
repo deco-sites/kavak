@@ -7,6 +7,7 @@ import { DecoManifest } from "$live/types.ts";
 import * as $$$$0 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/SliderJS.tsx";
 import * as $$$$$1 from "./islands/Header.tsx";
+import * as $$$$$2 from "./islands/ShareLinkButton.tsx";
 import * as $$$$$$$$0 from "./sections/StoreCards.tsx";
 import * as $$$$$$$$1 from "./sections/BlogTopPlaces.tsx";
 import * as $$$$$$$$2 from "./sections/Hero.tsx";
@@ -105,6 +106,7 @@ const manifest = {
   },
   "islands": {
     "./islands/Header.tsx": $$$$$1,
+    "./islands/ShareLinkButton.tsx": $$$$$2,
     "./islands/SliderJS.tsx": $$$$$0,
   },
   "sections": {

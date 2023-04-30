@@ -3145,6 +3145,10 @@
             },
             {
               "type": "string",
+              "const": "Share"
+            },
+            {
+              "type": "string",
               "const": "Linkedin"
             }
           ],
@@ -3198,6 +3202,26 @@
         "links"
       ],
       "title": "deco-sites/kavak/components/Header.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL1NoYXJlTGlua0J1dHRvbi50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "clippedText": {
+          "type": "string",
+          "title": "Clipped Text"
+        },
+        "withDomain": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "With Domain"
+        }
+      },
+      "required": [
+        "clippedText"
+      ],
+      "title": "deco-sites/kavak/components/ShareLinkButton.tsx@Props"
     },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page": {
       "$ref": "#/root/pages",
@@ -3735,6 +3759,10 @@
                   {
                     "type": "string",
                     "const": "Instagram"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Share"
                   },
                   {
                     "type": "string",
@@ -5207,6 +5235,27 @@
         }
       }
     },
+    "Li9pc2xhbmRzL1NoYXJlTGlua0J1dHRvbi50c3g=": {
+      "title": "./islands/ShareLinkButton.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL1NoYXJlTGlua0J1dHRvbi50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/ShareLinkButton.tsx"
+          ],
+          "default": "./islands/ShareLinkButton.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL1NsaWRlckpTLnRzeA==": {
       "title": "./islands/SliderJS.tsx",
       "type": "object",
@@ -6209,6 +6258,9 @@
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlci50c3g="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL1NoYXJlTGlua0J1dHRvbi50c3g="
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL1NsaWRlckpTLnRzeA=="
