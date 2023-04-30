@@ -25,7 +25,7 @@ export default function Header(props: Props) {
   }, [isMenuOpen.value]);
 
   return (
-    <div class="h-[56px] lg:h-[84px] flex justify-center bg-primary-light w-full">
+    <div class="h-[56px] lg:h-[84px] flex justify-center bg-primary-light w-full shadow-base">
       <div class="w-full max-w-[1320px] flex flex-row items-center justify-between px-4">
         <a href="/" alt="Kavak" title="Kavak" class="hidden lg:block">
           <Icon id="Logo" width={112} height={30} />
