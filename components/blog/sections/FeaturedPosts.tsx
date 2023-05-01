@@ -1,6 +1,6 @@
 import { BlogPostPreview } from "deco-sites/std/commerce/butterCMS/types.ts";
 import type { JSX } from "preact";
-import PostItem from "../PostItem.tsx";
+import FeaturedCard from "../post-card/FeaturedCard.tsx";
 import { tw } from "twind";
 
 export interface Props {
@@ -14,7 +14,7 @@ function FeaturedPosts({ posts }: Props) {
     (initial, post, index) => {
       if (index < 2) {
         return [
-          [...initial[0], <PostItem post={post} />],
+          [...initial[0], <FeaturedCard key={index} post={post} />],
           initial[1],
           initial[2],
         ];
@@ -23,13 +23,20 @@ function FeaturedPosts({ posts }: Props) {
       if (index > 2) {
         return [initial[0], initial[1], [
           ...initial[2],
-          <PostItem post={post} />,
+          <FeaturedCard key={index} post={post} />,
         ]];
       }
 
       return [
         initial[0],
-        [<PostItem post={post} withSummary hideMobileSummary size="large" />],
+        [
+          <FeaturedCard
+            key={index}
+            post={post}
+            withSummary
+            size="large"
+          />,
+        ],
         initial[2],
       ];
     },
