@@ -404,13 +404,18 @@
         "count": {
           "type": "number",
           "title": "Count"
+        },
+        "pageSize": {
+          "type": "number",
+          "title": "Page Size"
         }
       },
       "required": [
         "currentPage",
         "nextPage",
         "previousPage",
-        "count"
+        "count",
+        "pageSize"
       ],
       "title": "Pagination"
     },
@@ -3083,6 +3088,24 @@
       ],
       "title": "deco-sites/std/loaders/vtexLegacyRelatedProductsLoader.ts@Props"
     },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvZ2FsbGVyeS9HYWxsZXJ5UGFnaW5hdGlvbi50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "pagination": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Pagination",
+          "title": "Pagination"
+        },
+        "containerId": {
+          "type": "string",
+          "title": "Container Id"
+        }
+      },
+      "required": [
+        "pagination",
+        "containerId"
+      ],
+      "title": "deco-sites/kavak/components/blog/gallery/GalleryPagination.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlYWRlci50c3g=@Link": {
       "type": "object",
       "properties": {
@@ -3146,6 +3169,10 @@
             {
               "type": "string",
               "const": "Share"
+            },
+            {
+              "type": "string",
+              "const": "DoubleChevron"
             },
             {
               "type": "string",
@@ -3476,12 +3503,17 @@
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvQmxvZ0dhbGxlcnkudHN4@Props": {
       "type": "object",
       "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
         "list": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPostList",
           "title": "List"
         }
       },
       "required": [
+        "title",
         "list"
       ],
       "title": "deco-sites/kavak/components/blog/BlogGallery.tsx@Props"
@@ -3763,6 +3795,10 @@
                   {
                     "type": "string",
                     "const": "Share"
+                  },
+                  {
+                    "type": "string",
+                    "const": "DoubleChevron"
                   },
                   {
                     "type": "string",
@@ -5214,6 +5250,27 @@
         }
       }
     },
+    "Li9pc2xhbmRzL0dhbGxlcnlQYWdpbmF0aW9uLnRzeA==": {
+      "title": "./islands/GalleryPagination.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvZ2FsbGVyeS9HYWxsZXJ5UGFnaW5hdGlvbi50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/GalleryPagination.tsx"
+          ],
+          "default": "./islands/GalleryPagination.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL0hlYWRlci50c3g=": {
       "title": "./islands/Header.tsx",
       "type": "object",
@@ -6255,6 +6312,9 @@
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0dhbGxlcnlQYWdpbmF0aW9uLnRzeA=="
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlci50c3g="

@@ -1,102 +1,45 @@
-import type { BlogPostPreview } from "deco-sites/std/commerce/butterCMS/types.ts";
-import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { AuthorLabel } from "deco-sites/kavak/components/ui/AuthorLabel.tsx";
+import type { BlogPostPreview } from "deco-sites/std/commerce/butterCMS/types.ts";
+import { CardImage } from "./CardImage.tsx";
 
 export interface Props {
   post: BlogPostPreview;
-  withAuthor?: boolean;
-  withSummary?: boolean;
-  hideMobileSummary?: boolean;
-  hideMobileImage?: boolean;
-  size?: "small" | "normal" | "large";
 }
 
-function PostCard(
-  {
-    post,
-    withSummary = false,
-    hideMobileSummary = false,
-    hideMobileImage = false,
-    withAuthor = false,
-    size = "normal",
-  }: Props,
-) {
-  const imageSize = {
-    normal: { height: 165, width: 446 },
-    small: { height: 129, width: 320 },
-    large: { height: 356, width: 962 },
-  };
-
+function PostCard({ post }: Props) {
   return (
-    <article
-      class={`${
-        size === "large" ? "lg:max-w-full" : ""
-      } max-w-[326px] overflow-hidden rounded-md shadow-base flex w-full`}
-    >
+    <article class="lg:w-1/3 sm:w-1/2 overflow-hidden flex w-full px-4">
       <a href={`/blog/${post.slug}`} class="flex flex-col">
-        <div
-          class={`${
-            hideMobileImage ? "hidden md:flex" : "flex"
-          } items-center justify-center relative`}
-        >
-          <Picture
-            preload
-            class="col-start-1 col-span-1 row-start-1 row-span-1"
-          >
-            <Source
-              src={post.image}
-              width={imageSize.normal.width}
-              height={imageSize.normal.height}
-              media="(max-width: 992px)"
-            />
-            <Source
-              src={post.image}
-              width={imageSize[size].width}
-              height={imageSize[size].height}
-              media="(min-width: 992px)"
-            />
-            <img
-              width="100%"
-              height="100%"
-              src={post.image}
-              alt={post.imageAlt}
-              class={`lg:(h-[${
-                imageSize[size].height
-              }px]) w-auto h-[${imageSize.normal.height}px] object-cover`}
-            />
-          </Picture>
+        <div class="flex items-center justify-center relative bg-[#e9e9e9]">
+          <CardImage
+            image={post.image}
+            alt={post.imageAlt}
+            sizes={{
+              desktop: {
+                width: 446,
+                height: 165,
+              },
+              mobile: {
+                width: 446,
+                height: 165,
+              },
+            }}
+          />
         </div>
-        <div
-          class={`${
-            post.ctaText ? "md:h-[184px]" : ""
-          } flex flex-col justify-between`}
-        >
-          <div class="flex flex-col justify-center h-full p-4 gap-2 flex-1">
+        <div class="flex flex-col justify-between">
+          <div class="flex flex-col justify-center h-full py-4 gap-2 flex-1">
             <p class="uppercase text-primary text-xs font-bold tracking-wider leading-3">
               {post.category.name}
             </p>
-            <h3 class="text-xl leading-5 font-bold">{post.title}</h3>
-            {withAuthor
-              ? (
-                <AuthorLabel
-                  publishedDate={post.publishedAt}
-                  author={post.author}
-                />
-              )
-              : null}
-            {withSummary
-              ? (
-                <p
-                  class={`${hideMobileSummary ? "hidden lg:block" : ""} ${
-                    post.ctaText ? "line-clamp-5" : "line-clamp-3"
-                  } leading-4 text-base-lighter`}
-                >
-                  {post.summary}
-                </p>
-              )
-              : null}
+            <h3 class="text-2xl font-bold">{post.title}</h3>
+            <AuthorLabel
+              publishedDate={post.publishedAt}
+              author={post.author}
+            />
+            <p class="line-clamp-5 leading-4 text-base-lighter pt-2">
+              {post.summary}
+            </p>
           </div>
-          {post.ctaText ? <a href={`/${post.slug}`}>{post.ctaText}</a> : null}
         </div>
       </a>
     </article>

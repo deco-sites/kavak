@@ -1,14 +1,29 @@
 import type { LoaderReturnType } from "$live/types.ts";
+import { Container } from "deco-sites/kavak/components/ui/Container.tsx";
+import { SectionTitle } from "deco-sites/kavak/components/ui/SectionTitle.tsx";
 import type { BlogPostList } from "deco-sites/std/commerce/butterCMS/types.ts";
+import GalleryPagination from "./gallery/GalleryPagination.tsx";
+import PostCard from "./post-card/PostCard.tsx";
+import { useId } from "preact/compat";
 
 export interface Props {
+  title: string;
   list: LoaderReturnType<BlogPostList>;
 }
 
-function BlogGallery(props: Props) {
+function BlogGallery({ title, list: { posts, pagination } }: Props) {
+  const id = useId();
+
   return (
-    <div>
-    </div>
+    <Container id={id} class="my-8">
+      <section>
+        <SectionTitle>{title}</SectionTitle>
+        <div class="flex flex-row flex-wrap gap-y-10 -mx-4">
+          {posts.map((post) => <PostCard post={post} />)}
+        </div>
+        <GalleryPagination pagination={pagination} containerId={id} />
+      </section>
+    </Container>
   );
 }
 
