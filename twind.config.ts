@@ -24,6 +24,9 @@ export default {
     },
   },
   plugins: {
+    "flex-value": ([mod]: string[]) => ({
+      "flex": mod.replace(/(^\[)|(\])$/g, "").replace(/_/g, " "),
+    }),
     "border-t-primary": {
       "border-top-color": "#3374DB",
     },

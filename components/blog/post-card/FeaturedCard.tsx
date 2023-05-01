@@ -41,20 +41,18 @@ function FeaturedCard({
             }}
           />
         </div>
-        <div class="flex flex-col justify-between">
-          <div class="flex flex-col justify-center h-full p-4 gap-2 flex-1">
-            <p class="uppercase text-primary text-xs font-bold tracking-wider leading-3">
-              {post.category.name}
-            </p>
-            <h3 class="text-xl leading-5 font-bold">{post.title}</h3>
-            {withSummary
-              ? (
-                <p class="line-clamp-3 leading-4 text-base-lighter lg:block hidden">
-                  {post.summary}
-                </p>
-              )
-              : null}
-          </div>
+        <div class="flex flex-col justify-center h-full p-4 gap-2 flex-1">
+          <p class="uppercase text-primary text-xs font-bold tracking-wider leading-3">
+            {post.category.name}
+          </p>
+          <h3 class="text-xl leading-5 font-bold">{post.title}</h3>
+          {withSummary
+            ? (
+              <p class="line-clamp-3 leading-4 text-base-lighter lg:block hidden">
+                {post.summary}
+              </p>
+            )
+            : null}
         </div>
       </a>
     </article>
