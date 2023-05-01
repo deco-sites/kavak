@@ -15,6 +15,8 @@ export default {
         "primary-light": "#FFFFFF",
         "base-light": "#333333",
         "base-lighter": "#5b5b5b",
+        "base-gray": "#e9e9e9",
+        "gray": "#c7c7c7",
         transparent: "transparent",
       },
       fontFamily: {

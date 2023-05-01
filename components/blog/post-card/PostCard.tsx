@@ -10,7 +10,7 @@ function PostCard({ post }: Props) {
   return (
     <article class="lg:w-1/3 sm:w-1/2 overflow-hidden flex w-full px-4">
       <a href={`/blog/${post.slug}`} class="flex flex-col">
-        <div class="flex items-center justify-center relative bg-[#e9e9e9]">
+        <div class="flex items-center justify-center relative bg-base-gray">
           <CardImage
             image={post.image}
             alt={post.imageAlt}
