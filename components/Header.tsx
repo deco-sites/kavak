@@ -46,6 +46,7 @@ export default function Header(props: Props) {
           height={24}
           onClick={toggleMenu}
           id={isMenuOpen.value ? "XMark" : "Bars3"}
+          strokeWidth={isMenuOpen.value ? 3 : 0.1}
           class="block lg:hidden text-primary cursor-pointer"
         />
       </div>

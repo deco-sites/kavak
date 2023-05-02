@@ -25,15 +25,15 @@ function BlogCategoryMenu({ categories, page, hideTitle }: Props) {
           </SectionTitle>
         )
         : null}
-      <nav class="mb-4">
-        <ul class="flex sm:flex-wrap gap-4 overflow-auto">
+      <nav class="mb-2 overflow-auto">
+        <ul class="flex sm:flex-wrap gap-x-4 pb-2">
           {categoriesList.map((category, index) => (
             <li key={index}>
               <a
                 href={index === 0 ? "/blog" : `/blog-category/${category.slug}`}
                 class={`${
                   page?.title === category.name ? "text-primary" : ""
-                } py-2 block`}
+                } py-1 block whitespace-nowrap text-base-lighter`}
               >
                 {category.name}
               </a>
