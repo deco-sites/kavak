@@ -10,13 +10,7 @@ function FeaturedAds({ posts }: Props) {
   return (
     <section class="md:(flex-row overflow-auto) flex flex-col overflow-visible gap-5 flex-nowrap w-full pb-4">
       {posts.map<JSX.Element>(
-        (post, index) => (
-          <AdCard
-            key={index}
-            post={post}
-            size="small"
-          />
-        ),
+        (post, index) => <AdCard key={index} post={post} />,
       )}
     </section>
   );

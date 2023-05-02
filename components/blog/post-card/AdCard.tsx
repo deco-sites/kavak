@@ -3,16 +3,9 @@ import { CardImage } from "./CardImage.tsx";
 
 export interface Props {
   post: BlogPostPreview;
-  size?: "small" | "normal" | "large";
 }
 
-function AdCard({ post, size = "normal" }: Props) {
-  const imageSize = {
-    normal: { height: 165, width: 446 },
-    small: { height: 129, width: 320 },
-    large: { height: 356, width: 962 },
-  };
-
+function AdCard({ post }: Props) {
   return (
     <article class="md:(max-w-[328px] first:ml-1 last:mr-1) lg:(flex-value-[auto] mx-0 max-w-[33%]) flex-value-[0_0_50%] overflow-hidden rounded-md shadow-base flex w-full">
       <div href={`/blog/${post.slug}`} class="flex flex-col">
@@ -22,12 +15,12 @@ function AdCard({ post, size = "normal" }: Props) {
             alt={post.imageAlt}
             sizes={{
               desktop: {
-                width: imageSize[size].width,
-                height: imageSize[size].height,
+                width: 320,
+                height: 129,
               },
               mobile: {
-                width: imageSize.normal.width,
-                height: imageSize.normal.height,
+                width: 446,
+                height: 165,
               },
             }}
           />
