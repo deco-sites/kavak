@@ -1,12 +1,10 @@
 import type { LoaderReturnType } from "$live/types.ts";
-import Icon from "deco-sites/kavak/components/Icon.tsx";
 import { AuthorLabel } from "deco-sites/kavak/components/ui/AuthorLabel.tsx";
 import { Container } from "deco-sites/kavak/components/ui/Container.tsx";
 import { SectionTitle } from "deco-sites/kavak/components/ui/SectionTitle.tsx";
 import ShareLinkButton from "deco-sites/kavak/islands/ShareLinkButton.tsx";
 import type { BlogPost } from "deco-sites/std/commerce/butterCMS/types.ts";
 import { useId } from "preact/hooks";
-import { BlogBreadcrumb } from "./BlogBreadcrumb.tsx";
 
 export interface Props {
   post: LoaderReturnType<BlogPost>;
@@ -17,9 +15,6 @@ function BlogPostDetail({ post }: Props) {
   return (
     <Container>
       <section>
-        <div class="mb-6 mt-7">
-          <BlogBreadcrumb category={post.category} title={post.title} />
-        </div>
         <div class="flex flex-nowrap items-end mb-4">
           <SectionTitle class="text-2xl w-full mb-0">{post.title}</SectionTitle>
           <ShareLinkButton
