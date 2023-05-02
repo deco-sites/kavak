@@ -9,6 +9,7 @@ import type {
   BlogSectionPlaces,
   BlogSectionPosts,
 } from "deco-sites/std/commerce/butterCMS/types.ts";
+import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { useId } from "preact/hooks";
 import { SectionContent } from "./BlogSection.tsx";
 import { BlogPlaces } from "./sections/BlogPlaces.tsx";
@@ -43,7 +44,32 @@ function BlogPostDetail({ post, ads, categories, searchTerms }: Props) {
               class="absolute w-0 h-full left-full top-0 border-t-primary border-t-[2rem] border-b-0 border-l-0 border-r-[0.75rem] border-transparent"
             />
           </p>
-          <img src={post.image} alt={post.imageAlt} />
+          <Picture
+            preload
+            class="col-start-1 col-span-1 row-start-1 row-span-1"
+          >
+            <Source
+              src={post.image}
+              width={508}
+              height={188}
+              fetchPriority="high"
+              media="(max-width: 768px)"
+            />
+            <Source
+              src={post.image}
+              width={1300}
+              height={481}
+              fetchPriority="high"
+              media="(min-width: 768px)"
+            />
+            <img
+              width="100%"
+              height="100%"
+              src={post.image}
+              alt={post.imageAlt}
+              // class={`lg:(h-[${desktop.height}px]) w-auto h-[${mobile.height}px] object-cover`}
+            />
+          </Picture>
         </div>
         <div class="flex lg:flex-row flex-col gap-4 pt-8">
           <article>
