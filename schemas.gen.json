@@ -3978,12 +3978,24 @@
     "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==@Props": {
       "type": "object",
       "properties": {
+        "page": {
+          "$ref": "#/definitions/L1VzZXJzL2d1c3Rhdm92YXNjb25jZWxsb3MvZGV2ZWxvcC9kZWNvL3N0ZC9jb21tZXJjZS9idXR0ZXJDTVMvdHlwZXMudHM=@BlogPage",
+          "title": "Page"
+        },
         "title": {
-          "type": "string",
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "On post detail page should be blank",
           "title": "Title"
         },
         "description": {
-          "type": "string",
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "On post detail page should be blank",
           "title": "Description"
         },
         "url": {
@@ -4004,8 +4016,6 @@
         }
       },
       "required": [
-        "title",
-        "description",
         "url",
         "imageUrl",
         "faviconUrl",

@@ -1,3 +1,4 @@
+import { Head } from "$fresh/runtime.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import { AuthorLabel } from "deco-sites/kavak/components/ui/AuthorLabel.tsx";
 import { Container } from "deco-sites/kavak/components/ui/Container.tsx";
@@ -23,6 +24,9 @@ function BlogPostDetail({ post, ads, categories, searchTerms }: Props) {
   const articleId = useId();
   return (
     <Container>
+      <Head>
+        <meta name="description" content={post.seo.description} />
+      </Head>
       <section>
         <div class="flex flex-nowrap items-end mb-4">
           <SectionTitle class="text-2xl w-full mb-0">{post.title}</SectionTitle>

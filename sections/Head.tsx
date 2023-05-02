@@ -1,8 +1,17 @@
 import { Head } from "$fresh/runtime.ts";
+import type { LoaderReturnType } from "$live/types.ts";
+import type { BlogPage } from "../../std/commerce/butterCMS/types.ts";
 
 export interface Props {
-  title: string;
-  description: string;
+  page?: LoaderReturnType<BlogPage>;
+  /**
+   * @description On post detail page should be blank
+   */
+  title?: string;
+  /**
+   * @description On post detail page should be blank
+   */
+  description?: string;
   url: string;
   imageUrl: string;
   faviconUrl: string;
@@ -10,18 +19,26 @@ export interface Props {
 }
 
 export default function HeadComponent({
-  title = "deco.cx — starter site",
-  description = "Deliver complete commerce experiences — start here!",
-  url = "https://start.deco.site",
-  imageUrl = "https://deco.cx/images/deco-logo-light.png",
-  faviconUrl = "",
+  page,
+  title,
+  description,
+  url = "https://kavak.deco.site/",
+  imageUrl =
+    "https://images.kavak.services/assets/olimpo/images/home/jpg/main-hero-lg.jpg",
+  faviconUrl = "https://www.kavak.com/br/favicon.ico",
   themeColor = "#003232",
 }: Props) {
   return (
     <Head>
-      <title>{title}</title>
+      {page?.title
+        ? (
+          <title>
+            {page.title} | Índice de referência na Indústria Automotiva.
+          </title>
+        )
+        : <title>{title}</title>}
+      {description ? <meta name="description" content={description} /> : null}
       <meta name="theme-color" content={themeColor}></meta>
-      <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
