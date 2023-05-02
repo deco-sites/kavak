@@ -21,7 +21,9 @@ function BlogGallery({ title, list: { posts, pagination } }: Props) {
         <div class="flex flex-row flex-wrap gap-y-10 -mx-4">
           {posts.map((post) => <PostCard post={post} />)}
         </div>
-        <GalleryPagination pagination={pagination} containerId={id} />
+        {pagination
+          ? <GalleryPagination pagination={pagination} containerId={id} />
+          : null}
       </section>
     </Container>
   );
