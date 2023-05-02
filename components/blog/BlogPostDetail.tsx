@@ -3,14 +3,23 @@ import { AuthorLabel } from "deco-sites/kavak/components/ui/AuthorLabel.tsx";
 import { Container } from "deco-sites/kavak/components/ui/Container.tsx";
 import { SectionTitle } from "deco-sites/kavak/components/ui/SectionTitle.tsx";
 import ShareLinkButton from "deco-sites/kavak/islands/ShareLinkButton.tsx";
-import type { BlogPost } from "deco-sites/std/commerce/butterCMS/types.ts";
+import type {
+  BlogPost,
+  BlogSectionPlaces,
+  BlogSectionPosts,
+} from "deco-sites/std/commerce/butterCMS/types.ts";
 import { useId } from "preact/hooks";
+import { SectionContent } from "./BlogSection.tsx";
+import { BlogPlaces } from "./sections/BlogPlaces.tsx";
 
 export interface Props {
   post: LoaderReturnType<BlogPost>;
+  ads: LoaderReturnType<BlogSectionPosts>;
+  categories: LoaderReturnType<BlogSectionPlaces>;
+  searchTerms: LoaderReturnType<BlogSectionPlaces>;
 }
 
-function BlogPostDetail({ post }: Props) {
+function BlogPostDetail({ post, ads, categories, searchTerms }: Props) {
   const articleId = useId();
   return (
     <Container>
@@ -32,57 +41,85 @@ function BlogPostDetail({ post }: Props) {
           </p>
           <img src={post.image} alt={post.imageAlt} />
         </div>
-        <article class="mt-8">
-          <AuthorLabel publishedDate={post.publishedAt} author={post.author} />
-          <style
-            dangerouslySetInnerHTML={{
-              __html: `
-                #${articleId} * {
-                  margin-bottom: 1rem;
-                }
-                #${articleId} p {
-                  font-size: 1rem;
-                  color: #333;
-                  line-height: 1.4;
-                  margin-bottom: 1.5rem;
-                }
-                #${articleId} h2 {
-                  font-size: 1.5rem;
-                  font-weight: 700;
-                  color: #000;
-                  line-height: normal;
-                  margin-bottom: 1.5rem;
-                }
-                #${articleId} h3 {
-                  font-size: 1.25rem;
-                  font-weight: 700;
-                  color: #000;
-                  line-height: normal;
-                  margin-bottom: 1.5rem;
-                }
-                #${articleId} img {
-                  width: 100%;
-                  height: auto;
-                }
-                #${articleId} ul {
-                  padding-left: 2.5rem;
-                  list-style-type: disc;
-                }
-                #${articleId} a {
-                  color: #3374db;
-                }
-              `,
-            }}
-          />
-          <div
-            class="mt-2"
-            id={articleId}
-            dangerouslySetInnerHTML={{ __html: post.body }}
-          />
-        </article>
+        <div class="flex lg:flex-row flex-col gap-4 pt-8">
+          <article>
+            <AuthorLabel
+              publishedDate={post.publishedAt}
+              author={post.author}
+            />
+            <style
+              dangerouslySetInnerHTML={{
+                __html: descriptionCSS(articleId),
+              }}
+            />
+            <div
+              class="mt-2"
+              id={articleId}
+              dangerouslySetInnerHTML={{ __html: post.body }}
+            />
+          </article>
+          <aside class="lg:min-w-[33%] w-full pt-4">
+            <SectionContent
+              type="featured_ads"
+              direction="column"
+              posts={ads.posts}
+            />
+            <section class="flex lg:flex-col sm:(flex-row flex) flex-col gap-4 mt-8">
+              <article class="lg:w-full sm:w-1/2 w-full">
+                <BlogPlaces
+                  title={categories.title}
+                  places={categories.places}
+                />
+              </article>
+              <article class="lg:w-full sm:w-1/2 w-full">
+                <BlogPlaces
+                  title={searchTerms.title}
+                  places={searchTerms.places}
+                />
+              </article>
+            </section>
+          </aside>
+        </div>
       </section>
     </Container>
   );
 }
+
+const descriptionCSS = (id: string) => `
+#${id} * {
+  margin-bottom: 1rem;
+}
+#${id} p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+#${id} h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  line-height: normal;
+  margin-bottom: 1.5rem;
+}
+#${id} h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000;
+  line-height: normal;
+  margin-bottom: 1.5rem;
+}
+#${id} img {
+  width: 100%;
+  height: auto;
+}
+#${id} ul {
+  padding-left: 2.5rem;
+  list-style-type: disc;
+}
+#${id} a {
+  color: #3374db;
+}
+`;
 
 export default BlogPostDetail;

@@ -14,18 +14,21 @@ export interface Props {
   variant: FieldTypes;
 }
 
-export interface ContentProps {
+export interface SectionContentProps {
   type: FieldTypes;
   posts: BlogPostPreview[];
+  direction?: "row" | "column";
 }
 
-function Content({ type, posts }: ContentProps) {
+export function SectionContent(
+  { type, posts, direction = "row" }: SectionContentProps,
+) {
   if (type === "featured_posts") {
     return <FeaturedPosts posts={posts} />;
   }
 
   if (type === "featured_ads") {
-    return <FeaturedAds posts={posts} />;
+    return <FeaturedAds posts={posts} direction={direction} />;
   }
 
   return <p>For other variants you must use other sections</p>;
@@ -35,7 +38,7 @@ function BlogSection({ section, variant }: Props) {
   return (
     <Container>
       <SectionTitle>{section.title}</SectionTitle>
-      <Content type={variant} posts={section.posts} />
+      <SectionContent type={variant} posts={section.posts} />
     </Container>
   );
 }
