@@ -12,7 +12,13 @@ function BlogTopPlaces({ categories, searchTerms }: Props) {
   return (
     <Container class="flex sm:flex-row flex-col flex-nowrap gap-8 mb-10 mt-20">
       <section class="sm:w-1/2 w-full">
-        <BlogPlaces title={searchTerms.title} places={searchTerms.places} />
+        <BlogPlaces
+          title={searchTerms.title}
+          places={searchTerms.places.map((place) => ({
+            ...place,
+            slug: `https://www.kavak.com/br/${place.slug}`,
+          }))}
+        />
       </section>
       <section class="sm:w-1/2 w-full">
         <BlogPlaces title={categories.title} places={categories.places} />

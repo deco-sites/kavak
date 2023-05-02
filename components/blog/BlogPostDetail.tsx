@@ -74,7 +74,10 @@ function BlogPostDetail({ post, ads, categories, searchTerms }: Props) {
               <article class="lg:w-full sm:w-1/2 w-full">
                 <BlogPlaces
                   title={searchTerms.title}
-                  places={searchTerms.places}
+                  places={searchTerms.places.map((place) => ({
+                    ...place,
+                    slug: `https://www.kavak.com/br/${place.slug}`,
+                  }))}
                 />
               </article>
             </section>

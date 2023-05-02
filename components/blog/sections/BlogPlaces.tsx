@@ -9,7 +9,9 @@ export function BlogPlaces({ title, places }: BlogSectionPlaces) {
         {places.map((place, index) => (
           <li key={index}>
             <a
-              href={`/${place.slug}`}
+              href={place.slug.includes("https")
+                ? place.slug
+                : `/${place.slug}`}
               class="px-4 py-2 border-1 rounded-md border-gray block"
             >
               {place.name}
