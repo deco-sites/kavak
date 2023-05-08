@@ -15,7 +15,7 @@ function BlogGallery({ title, list: { posts, pagination } }: Props) {
   const id = useId();
 
   if (!posts?.length) {
-    return <div class="hidden" aria-hidden="true" />
+    return <div class="hidden" aria-hidden="true" />;
   }
 
   return (
