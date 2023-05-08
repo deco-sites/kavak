@@ -13,6 +13,8 @@ export type AvailableIcons =
   | "Brasil"
   | "Facebook"
   | "Instagram"
+  | "Share"
+  | "DoubleChevron"
   | "Linkedin";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
@@ -33,7 +35,7 @@ function Icon(
       {...otherProps}
       width={width ?? size}
       height={height ?? size}
-      strokeWidth={strokeWidth}
+      stroke-width={strokeWidth}
     >
       <use href={asset(`/sprites.svg#${id}`)} />
     </svg>
