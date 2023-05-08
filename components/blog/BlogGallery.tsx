@@ -14,6 +14,10 @@ export interface Props {
 function BlogGallery({ title, list: { posts, pagination } }: Props) {
   const id = useId();
 
+  if (!posts?.length) {
+    return <div class="hidden" aria-hidden="true" />
+  }
+
   return (
     <Container id={id} class="my-8">
       <section>
