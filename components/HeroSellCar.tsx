@@ -86,7 +86,7 @@ export default function Hero(props: Props) {
           {actions.primary && (
             <div>
               <Button
-                style="w-full md:w-auto text-center mt-6"
+                style="w-full md:w-auto text-center mt-6 xl:px-[5.85rem]"
                 href={actions.primary.href}
                 type={theme === "blue" ? "secondary" : "primary"}
               >
@@ -204,6 +204,7 @@ function generateTitleClasses(props: Props) {
     "md:max-w-[100%]",
     "lg:text-[44px]",
     "xl:text-[48px]",
+    "xl:leading-[1.08]",
   ];
 
   return classes.join(" ");
@@ -222,6 +223,8 @@ function generateDescriptionClasses(props: Props) {
     "last:mb-0",
     "pb-4",
     "mb-4",
+    "xl:pb-6",
+    "xl:mb-6",
     "text-base",
     "md:text-xl",
   ];
