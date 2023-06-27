@@ -77,7 +77,7 @@ export default function Hero(props: Props) {
       {images.background && <BackgroundImage {...props} />}
 
       <div class={generateInnerContainerClasses(props)}>
-        <div class="flex flex-col gap-6 md:max-w-[400px] lg:max-w-[425px] xl:max-w-[600px] w-full">
+        <div class="flex flex-col gap-6 md:max-w-[380px] lg:max-w-[425px] xl:max-w-[600px] w-full">
           <div
             class={generateTitleClasses(props)}
             dangerouslySetInnerHTML={{ __html: title }}
