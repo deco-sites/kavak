@@ -8,7 +8,7 @@ import type {
 } from "deco-sites/std/components/types.ts";
 
 export interface Props {
-  title: string;
+  title: HTML;
   description: HTML;
   fcp: boolean;
   /** @default false */
@@ -40,6 +40,7 @@ export interface Props {
       tablet: LiveImage;
       mobile: LiveImage;
     };
+    detailClassesBG?: string;
     detail?: {
       desktop: LiveImage;
       tablet: LiveImage;
@@ -73,9 +74,11 @@ export default function Hero(props: Props) {
       {images.background && <BackgroundImage {...props} />}
 
       <div class={generateInnerContainerClasses(props)}>
-        <div class="flex flex-col gap-6 md:max-w-[400px] lg:max-w-[600px] w-full">
-          <h1 class={generateTitleClasses(props)}>{title}</h1>
-
+        <div class="flex flex-col gap-6 md:max-w-[400px] lg:max-w-[425px] xl:max-w-[550px] w-full">
+          <div
+            class={generateTitleClasses(props)}
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
           <div
             class={generateDescriptionClasses(props)}
             dangerouslySetInnerHTML={{ __html: description }}
@@ -173,17 +176,16 @@ function BackgroundImage(props: Props) {
 }
 
 function generateContainerClasses(props: Props) {
-  const { height, theme, images } = props;
+  const { theme, images } = props;
   const isMobileDetailOnTop = images.detailPositon?.mobile === "top";
 
   const classes = [
-    // height classes
-    height?.mobile ? `h-[${height.mobile}px]` : "h-full",
-    height?.tablet ? `md:h-[${height.tablet}px]` : "md:h-full",
-    height?.desktop ? `lg:h-[${height.desktop}px]` : "lg:h-full",
-
     // paddings
-    "p-8",
+    "px-4",
+    "pb-0",
+    "pt-10",
+    "md:pt-0",
+    "lg:px-8",
 
     // positioning
     "flex",
@@ -216,7 +218,10 @@ function generateInnerContainerClasses(props: Props) {
     "items-center",
     "max-w-[1320px]",
     "justify-between",
-
+    "md:h-full",
+    "lg:max-w-[960px]",
+    "xl:max-w-[1180px]",
+    "2xl:max-w-[1320px]",
     // positioning
     isTabletDetailOnRight ? "md:flex-row" : "md:flex-row-reverse",
     isDesktopDetailOnRight ? "lg:flex-row" : "lg:flex-row-reverse",
@@ -227,7 +232,7 @@ function generateInnerContainerClasses(props: Props) {
 }
 
 function generateBackgroundImageClasses(props: Props) {
-  const { height } = props;
+  const { height, images } = props;
 
   const classes = [
     // height classes
@@ -241,6 +246,7 @@ function generateBackgroundImageClasses(props: Props) {
     "top-0",
     "left-0",
     "z-0",
+    images.detailClassesBG,
   ];
 
   return classes.join(" ");
@@ -255,6 +261,9 @@ function generateTitleClasses(props: Props) {
     "font-title",
     "md:text-4xl",
     "md:text-left",
+    "lg:text-[44px]",
+    "lg:leading-[1.2]",
+    "xl:text-[48px]",
   ];
 
   return classes.join(" ");
@@ -267,7 +276,8 @@ function generateDescriptionClasses(props: Props) {
     hideDescriptionOnMobile ? "hidden" : "block",
     "md:block",
     "text-lg",
-    "md:text-2xl",
+    "lg:mb-10",
+    "xl:max-w-[330px]",
   ];
 
   return classes.join(" ");

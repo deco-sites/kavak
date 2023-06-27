@@ -23,6 +23,9 @@ export default {
         body: ["Vazirmatn", "sans-serif"],
         title: ["Noka", "serif"],
       },
+      inset: {
+        "unset": "unset",
+      },
     },
   },
   plugins: {
