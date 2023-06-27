@@ -9,7 +9,10 @@ import type {
 
 export interface Props {
   title: HTML;
+  fontSizeTitle?: string;
   description: HTML;
+  fontSizeDescription?: string;
+  heightContainer?: string;
   fcp: boolean;
   /** @default false */
   hideDescriptionOnMobile?: boolean;
@@ -74,7 +77,7 @@ export default function Hero(props: Props) {
       {images.background && <BackgroundImage {...props} />}
 
       <div class={generateInnerContainerClasses(props)}>
-        <div class="flex flex-col gap-6 md:max-w-[400px] lg:max-w-[425px] xl:max-w-[550px] w-full">
+        <div class="flex flex-col gap-6 md:max-w-[400px] lg:max-w-[425px] xl:max-w-[600px] w-full">
           <div
             class={generateTitleClasses(props)}
             dangerouslySetInnerHTML={{ __html: title }}
@@ -98,7 +101,10 @@ export default function Hero(props: Props) {
 
           {actions.secondary && (
             <div class="flex flex-row items-center justify-center md:justify-start gap-1 hover:gap-3">
-              <a class="text-sm md:text-lg" href={actions.secondary.href}>
+              <a
+                class="text-base font-black md:text-lg"
+                href={actions.secondary.href}
+              >
                 {actions.secondary.label}
               </a>
 
@@ -176,7 +182,7 @@ function BackgroundImage(props: Props) {
 }
 
 function generateContainerClasses(props: Props) {
-  const { theme, images } = props;
+  const { theme, images, heightContainer } = props;
   const isMobileDetailOnTop = images.detailPositon?.mobile === "top";
 
   const classes = [
@@ -186,7 +192,7 @@ function generateContainerClasses(props: Props) {
     "pt-10",
     "md:pt-0",
     "lg:px-8",
-
+    heightContainer,
     // positioning
     "flex",
     "flex-col",
@@ -253,24 +259,25 @@ function generateBackgroundImageClasses(props: Props) {
 }
 
 function generateTitleClasses(props: Props) {
-  const { hideDescriptionOnMobile } = props;
+  const { hideDescriptionOnMobile, fontSizeTitle } = props;
 
   const classes = [
     hideDescriptionOnMobile ? "text-center" : "text-left",
-    hideDescriptionOnMobile ? "text-2xl" : "text-3xl",
+    hideDescriptionOnMobile ? "text-3xl" : "text-3xl",
     "font-title",
     "md:text-4xl",
     "md:text-left",
     "lg:text-[44px]",
     "lg:leading-[1.2]",
     "xl:text-[48px]",
+    fontSizeTitle,
   ];
 
   return classes.join(" ");
 }
 
 function generateDescriptionClasses(props: Props) {
-  const { hideDescriptionOnMobile } = props;
+  const { hideDescriptionOnMobile, fontSizeDescription } = props;
 
   const classes = [
     hideDescriptionOnMobile ? "hidden" : "block",
@@ -278,6 +285,7 @@ function generateDescriptionClasses(props: Props) {
     "text-lg",
     "lg:mb-10",
     "xl:max-w-[330px]",
+    fontSizeDescription,
   ];
 
   return classes.join(" ");
