@@ -3,10 +3,14 @@ import Image from "deco-sites/std/components/Image.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Props {
-  links: Array<{ label: string; href: string }>;
-  socialLinks: Array<{ icon: AvailableIcons; href: string }>;
-  mobileStoreLinks: Array<{ imageUrl: LiveImage; href: string }>;
-  copyLinks: Array<{ label: string; href?: string }>;
+  links: Array<{ label: string; href: string; openNewTab?: boolean }>;
+  socialLinks: Array<
+    { icon: AvailableIcons; href: string; openNewTab?: boolean }
+  >;
+  mobileStoreLinks: Array<
+    { imageUrl: LiveImage; href: string; openNewTab?: boolean }
+  >;
+  copyLinks: Array<{ label: string; href?: string; openNewTab?: boolean }>;
   address: string;
 }
 
@@ -44,21 +48,23 @@ export default function Footer(props: Props) {
 
         <div class="flex flex-wrap -m-4 mb-6">
           <div class="flex items-center flex-row flex-wrap mx-4 my-4 gap-2">
-            {socialLinks.map(({ href, icon }) => (
+            {socialLinks.map(({ href, icon, openNewTab }) => (
               <a
                 href={href}
                 title={icon}
                 class="flex justify-center items-center bg-white w-8 h-8 rounded-full"
+                target={openNewTab ? "_blank" : ""}
               >
                 <Icon id={icon} width={18} height={18} class="text-black" />
               </a>
             ))}
           </div>
           <div class="flex items-center flex-row  flex-wrap mx-4 my-4 gap-2">
-            {mobileStoreLinks?.map(({ imageUrl, href }) => (
+            {mobileStoreLinks?.map(({ imageUrl, href, openNewTab }) => (
               <a
                 href={href}
                 class="flex justify-center items-center rounded-[8px]"
+                target={openNewTab ? "_blank" : ""}
               >
                 <Image
                   src={imageUrl}
@@ -77,10 +83,18 @@ export default function Footer(props: Props) {
 
         <div class="text-sm font-light border-t border-white border-solid lg:text-sm py-6">
           <ul class="mt-0 mb-4 not-italic leading-8 flex flex-col md:flex-row gap-4 md:gap-6">
-            {copyLinks.map(({ label, href }) => (
+            {copyLinks.map(({ label, href, openNewTab }) => (
               <li>
                 {href
-                  ? <a class="hover:text-underline" href={href}>{label}</a>
+                  ? (
+                    <a
+                      class="hover:text-underline"
+                      href={href}
+                      target={openNewTab ? "_blank" : ""}
+                    >
+                      {label}
+                    </a>
+                  )
                   : label}
               </li>
             ))}
