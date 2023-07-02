@@ -1,13 +1,16 @@
 import Button from "deco-sites/kavak/components/Button.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import type {
+  HTML,
+  Image as LiveImage,
+} from "deco-sites/std/components/types.ts";
 
 export interface Props {
-  title: string;
+  title: HTML;
   post: Array<{
     href: string;
     image: LiveImage;
-    overline: string;
-    title: string;
+    overline: HTML;
+    title: HTML;
   }>;
   action: {
     label: string;
@@ -20,7 +23,11 @@ export default function BlogPosts(props: Props) {
 
   return (
     <div class="flex flex-col items-center justify-center bg-primary text-primary-light p-8 gap-12">
-      <h1 class="text-3xl font-title">{title}</h1>
+      <div
+        class="text-3xl font-title lg:text-5xl"
+        dangerouslySetInnerHTML={{ __html: title }}
+      >
+      </div>
 
       <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
         {post.map((post) => (
@@ -37,9 +44,17 @@ export default function BlogPosts(props: Props) {
                 />
               </div>
 
-              <div class="flex flex-col gap-2 w-[calc(100%-200px)]">
-                <span class="uppercase text-sm">{post.overline}</span>
-                {post.title}
+              <div class="flex flex-col gap-2 w-[calc(100%-200px)] min-w-[100px]">
+                <div
+                  class="uppercase text-sm"
+                  dangerouslySetInnerHTML={{ __html: post.overline }}
+                >
+                </div>
+                <div
+                  class="text-lg"
+                  dangerouslySetInnerHTML={{ __html: post.title }}
+                >
+                </div>
               </div>
             </a>
           </li>

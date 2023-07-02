@@ -1,20 +1,27 @@
 import Icon, { AvailableIcons } from "deco-sites/kavak/components/Icon.tsx";
+import Image from "deco-sites/std/components/Image.tsx";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Props {
-  links: Array<{ label: string; href: string }>;
-  socialLinks: Array<{ icon: AvailableIcons; href: string }>;
-  copyLinks: Array<{ label: string; href?: string }>;
+  links: Array<{ label: string; href: string; openNewTab?: boolean }>;
+  socialLinks: Array<
+    { icon: AvailableIcons; href: string; openNewTab?: boolean }
+  >;
+  mobileStoreLinks: Array<
+    { imageUrl: LiveImage; href: string; openNewTab?: boolean }
+  >;
+  copyLinks: Array<{ label: string; href?: string; openNewTab?: boolean }>;
   address: string;
 }
 
 export default function Footer(props: Props) {
-  const { links, copyLinks, address, socialLinks } = props;
+  const { links, copyLinks, address, socialLinks, mobileStoreLinks } = props;
 
   return (
     <footer class="leading-4 text-white bg-black w-full p-8">
       <div class="w-full text-white max-w-[1340px] p-4 m-auto">
-        <div class="flex flex-wrap -m-4">
-          <div class="relative w-full lg:flex-shrink-0 lg:flex-grow-0 p-4">
+        <div class="flex flex-wrap -m-4 sm:flex-nowrap">
+          <div class="relative w-full lg: p-4 sm:w-[200px]">
             <a href="/" alt="Kavak" title="Kavak" class="hidden lg:block">
               <Icon id="Logo" width={112} height={30} />
             </a>
@@ -24,8 +31,8 @@ export default function Footer(props: Props) {
             </a>
           </div>
 
-          <div class="relative w-full lg:flex-shrink-0 lg:flex-grow-0 p-4">
-            <ul class="flex flex-col flex-wrap content-between text-sm font-light leading-3 sm:max-h-80 md:max-h-44 lg:text-sm">
+          <div class="relative w-full lg: p-4">
+            <ul class="flex flex-col flex-wrap content-between text-sm font-light leading-3 sm:max-h-80 sm:content-around md:max-h-44 lg:text-sm">
               {links.map(({ href, label }) => {
                 return (
                   <li class="mb-6">
@@ -41,13 +48,34 @@ export default function Footer(props: Props) {
 
         <div class="flex flex-wrap -m-4 mb-6">
           <div class="flex items-center flex-row flex-wrap mx-4 my-4 gap-2">
-            {socialLinks.map(({ href, icon }) => (
+            {socialLinks.map(({ href, icon, openNewTab }) => (
               <a
                 href={href}
                 title={icon}
                 class="flex justify-center items-center bg-white w-8 h-8 rounded-full"
+                target={openNewTab ? "_blank" : ""}
               >
                 <Icon id={icon} width={18} height={18} class="text-black" />
+              </a>
+            ))}
+          </div>
+          <div class="flex items-center flex-row  flex-wrap mx-4 my-4 gap-2">
+            {mobileStoreLinks?.map(({ imageUrl, href, openNewTab }) => (
+              <a
+                href={href}
+                class="flex justify-center items-center rounded-[8px]"
+                target={openNewTab ? "_blank" : ""}
+              >
+                <Image
+                  src={imageUrl}
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  width={110}
+                  height={35}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                  preload
+                />
               </a>
             ))}
           </div>
@@ -55,10 +83,18 @@ export default function Footer(props: Props) {
 
         <div class="text-sm font-light border-t border-white border-solid lg:text-sm py-6">
           <ul class="mt-0 mb-4 not-italic leading-8 flex flex-col md:flex-row gap-4 md:gap-6">
-            {copyLinks.map(({ label, href }) => (
+            {copyLinks.map(({ label, href, openNewTab }) => (
               <li>
                 {href
-                  ? <a class="hover:text-underline" href={href}>{label}</a>
+                  ? (
+                    <a
+                      class="hover:text-underline"
+                      href={href}
+                      target={openNewTab ? "_blank" : ""}
+                    >
+                      {label}
+                    </a>
+                  )
                   : label}
               </li>
             ))}
