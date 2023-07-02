@@ -78,7 +78,6 @@
               "deco-sites/kavak/sections/BlogTopPlaces.tsx",
               "deco-sites/kavak/sections/Features.tsx",
               "deco-sites/kavak/sections/Footer.tsx",
-              "deco-sites/kavak/sections/Head.tsx",
               "deco-sites/kavak/sections/Header.tsx",
               "deco-sites/kavak/sections/Hero.tsx",
               "deco-sites/kavak/sections/StoreCards.tsx",
@@ -7268,6 +7267,11 @@
       ],
       "title": "deco-sites/kavak/components/Footer.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
+      "type": "string",
+      "format": "html",
+      "title": "HTML"
+    },
     "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==@Props": {
       "type": "object",
       "properties": {
@@ -7554,7 +7558,7 @@
       "type": "object",
       "properties": {
         "title": {
-          "type": "string",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
           "title": "Title"
         },
         "store": {
@@ -7567,7 +7571,7 @@
                 "title": "Image"
               },
               "name": {
-                "type": "string",
+                "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
                 "title": "Name"
               },
               "address": {
@@ -9735,27 +9739,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==": {
-      "title": "deco-sites/kavak/sections/Head.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/kavak/sections/Head.tsx"
-          ],
-          "default": "deco-sites/kavak/sections/Head.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkZXIudHN4": {
       "title": "deco-sites/kavak/sections/Header.tsx",
       "type": "object",
@@ -10813,9 +10796,6 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9Gb290ZXIudHN4"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkZXIudHN4"
