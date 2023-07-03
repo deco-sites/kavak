@@ -81,6 +81,7 @@
               "deco-sites/kavak/sections/Head.tsx",
               "deco-sites/kavak/sections/Header.tsx",
               "deco-sites/kavak/sections/Hero.tsx",
+              "deco-sites/kavak/sections/HeroSellCar.tsx",
               "deco-sites/kavak/sections/StoreCards.tsx",
               "deco-sites/std/sections/Analytics.tsx",
               "deco-sites/std/sections/configButterCMS.global.tsx",
@@ -7550,6 +7551,208 @@
       ],
       "title": "deco-sites/kavak/components/Hero.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9TZWxsQ2FyLnRzeA==@TextDescription": {
+      "type": "object",
+      "properties": {
+        "descricao": {
+          "type": "string",
+          "title": "Descricao"
+        }
+      },
+      "required": [
+        "descricao"
+      ],
+      "title": "TextDescription"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9TZWxsQ2FyLnRzeA==@TextDescription[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9TZWxsQ2FyLnRzeA==@TextDescription"
+      },
+      "title": "TextDescription[]"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9TZWxsQ2FyLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "title": "Title"
+        },
+        "descriptionText": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9TZWxsQ2FyLnRzeA==@TextDescription[]",
+          "title": "Description Text"
+        },
+        "fcp": {
+          "type": "boolean",
+          "title": "Fcp"
+        },
+        "hideDescriptionOnMobile": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": "false",
+          "title": "Hide Description On Mobile"
+        },
+        "theme": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "blue"
+            },
+            {
+              "type": "string",
+              "const": "white"
+            }
+          ],
+          "type": "string",
+          "default": "blue",
+          "title": "Theme"
+        },
+        "actions": {
+          "type": "object",
+          "properties": {
+            "primary": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "title": "Label"
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href"
+                }
+              },
+              "required": [
+                "label",
+                "href"
+              ],
+              "title": "Primary"
+            },
+            "secondary": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "title": "Label"
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href"
+                }
+              },
+              "required": [
+                "label",
+                "href"
+              ],
+              "title": "Secondary"
+            }
+          },
+          "required": [],
+          "title": "Actions"
+        },
+        "images": {
+          "type": "object",
+          "properties": {
+            "image": {
+              "type": "object",
+              "properties": {
+                "desktop": {
+                  "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+                  "title": "Desktop"
+                },
+                "tablet": {
+                  "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+                  "title": "Tablet"
+                },
+                "mobile": {
+                  "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+                  "title": "Mobile"
+                }
+              },
+              "required": [
+                "desktop",
+                "tablet",
+                "mobile"
+              ],
+              "title": "Image"
+            },
+            "detailClasses": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Detail Classes"
+            },
+            "detailPositon": {
+              "type": "object",
+              "properties": {
+                "desktop": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "right"
+                    },
+                    {
+                      "type": "string",
+                      "const": "left"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Desktop"
+                },
+                "tablet": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "right"
+                    },
+                    {
+                      "type": "string",
+                      "const": "left"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Tablet"
+                },
+                "mobile": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "top"
+                    },
+                    {
+                      "type": "string",
+                      "const": "bottom"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Mobile"
+                }
+              },
+              "required": [
+                "desktop",
+                "tablet",
+                "mobile"
+              ],
+              "title": "Detail Positon"
+            }
+          },
+          "required": [],
+          "title": "Images"
+        }
+      },
+      "required": [
+        "title",
+        "descriptionText",
+        "fcp",
+        "theme",
+        "actions",
+        "images"
+      ],
+      "title": "deco-sites/kavak/components/HeroSellCar.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL1N0b3JlQ2FyZHMudHN4@Props": {
       "type": "object",
       "properties": {
@@ -9798,6 +10001,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZXJvU2VsbENhci50c3g=": {
+      "title": "deco-sites/kavak/sections/HeroSellCar.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9TZWxsQ2FyLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/kavak/sections/HeroSellCar.tsx"
+          ],
+          "default": "deco-sites/kavak/sections/HeroSellCar.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9TdG9yZUNhcmRzLnRzeA==": {
       "title": "deco-sites/kavak/sections/StoreCards.tsx",
       "type": "object",
@@ -10822,6 +11046,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZXJvLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZXJvU2VsbENhci50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9TdG9yZUNhcmRzLnRzeA=="
