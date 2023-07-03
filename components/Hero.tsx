@@ -6,16 +6,17 @@ import type {
   HTML,
   Image as LiveImage,
 } from "deco-sites/std/components/types.ts";
+import { maxSatisfying } from "https://deno.land/std@0.181.0/semver/mod.ts";
 
 export interface Props {
-  title: string;
+  title: HTML;
   description: HTML;
   fcp: boolean;
   /** @default false */
   hideDescriptionOnMobile?: boolean;
   /** @default blue */
   theme: "blue" | "white";
-  actions: {
+  button: {
     primary?: {
       label: string;
       href: string;
@@ -25,26 +26,11 @@ export interface Props {
       href: string;
     };
   };
-  /** @description value in pixels */
-  height?: {
-    /** @default 500 */
-    desktop?: number;
-    /** @default 500 */
-    tablet?: number;
-    /** @default 500 */
-    mobile?: number;
-  };
   images: {
-    background?: {
-      desktop: LiveImage;
-      tablet: LiveImage;
-      mobile: LiveImage;
-    };
-    detail?: {
-      desktop: LiveImage;
-      tablet: LiveImage;
-      mobile: LiveImage;
-    };
+    desktop: LiveImage;
+    tablet: LiveImage;
+    mobile: LiveImage;
+    alt: string;
     /** @description inject tailwind classes into detail image */
     detailClasses?: string;
     detailPositon?: {
@@ -55,12 +41,14 @@ export interface Props {
       /** @default bottom */
       mobile: "top" | "bottom";
     };
+    /** @default false */
+    desejaEncostarAImagemNoCanto?: boolean;
   };
 }
 
 export default function Hero(props: Props) {
   const {
-    actions,
+    button,
     description,
     images,
     theme,
@@ -70,33 +58,39 @@ export default function Hero(props: Props) {
 
   return (
     <div class={generateContainerClasses(props)}>
-      {images.background && <BackgroundImage {...props} />}
-
       <div class={generateInnerContainerClasses(props)}>
-        <div class="flex flex-col gap-6 md:max-w-[400px] lg:max-w-[600px] w-full">
-          <h1 class={generateTitleClasses(props)}>{title}</h1>
-
+        <div
+          class={`w-full flex flex-col gap-6 md:max-w-[400px] lg:max-w-[600px] ${
+            images.detailPositon?.desktop == "left"
+              ? "lg:ml-[64px]"
+              : "lg:mr-[64px]"
+          }`}
+        >
+          <div
+            class={generateTitleClasses(props)}
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
           <div
             class={generateDescriptionClasses(props)}
             dangerouslySetInnerHTML={{ __html: description }}
           />
 
-          {actions.primary && (
+          {button?.primary && (
             <div>
               <Button
-                style="w-full md:w-auto text-center"
-                href={actions.primary.href}
+                style="w-full md:w-auto text-center sm:mt-6 md:px-10 lg:px-12"
+                href={button.primary.href}
                 type={theme === "blue" ? "secondary" : "primary"}
               >
-                {actions.primary.label}
+                {button.primary.label}
               </Button>
             </div>
           )}
 
-          {actions.secondary && (
+          {button?.secondary && (
             <div class="flex flex-row items-center justify-center md:justify-start gap-1 hover:gap-3">
-              <a class="text-sm md:text-lg" href={actions.secondary.href}>
-                {actions.secondary.label}
+              <a class="text-sm md:text-lg" href={button.secondary.href}>
+                {button.secondary.label}
               </a>
 
               <Icon
@@ -110,30 +104,30 @@ export default function Hero(props: Props) {
           )}
         </div>
 
-        {images.detail && (
+        {images && (
           <Picture preload={fcp} class={generateDetailClasses(props)}>
             <Source
               width={375}
-              src={images.detail.mobile}
-              media="(max-width: 767px)"
+              src={images.mobile}
+              media="(max-width: 575px)"
             />
             <Source
-              width={768}
-              src={images.detail.tablet}
-              media="(min-width: 768px) and (max-width: 1023px)"
+              width={576}
+              src={images.tablet}
+              media="(min-width: 576px) and (max-width: 991px)"
             />
             <Source
               width={1440}
-              src={images.detail.desktop}
-              media="(min-width: 1024px)"
+              src={images.desktop}
+              media="(min-width: 992px)"
             />
             <img
-              alt={title}
+              alt={images.alt}
               width="100%"
               height="100%"
-              src={images.detail.desktop}
+              src={images.desktop}
               loading={fcp ? "eager" : "lazy"}
-              class="w-full h-full object-contain"
+              class="w-full "
             />
           </Picture>
         )}
@@ -142,49 +136,26 @@ export default function Hero(props: Props) {
   );
 }
 
-function BackgroundImage(props: Props) {
-  const { images, title } = props;
-
-  return (
-    <Picture class={generateBackgroundImageClasses(props)}>
-      <Source
-        src={images.background!.mobile}
-        width={375}
-        media="(max-width: 767px)"
-      />
-      <Source
-        src={images.background!.tablet}
-        width={768}
-        media="(min-width: 768px) and (max-width: 1023px)"
-      />
-      <Source
-        src={images.background!.desktop}
-        width={1440}
-        media="(min-width: 1024px)"
-      />
-
-      <img
-        alt={title}
-        src={images.background!.desktop}
-        class="w-full h-full object-cover object-top md:object-right"
-      />
-    </Picture>
-  );
-}
-
 function generateContainerClasses(props: Props) {
-  const { height, theme, images } = props;
+  const { theme, images } = props;
   const isMobileDetailOnTop = images.detailPositon?.mobile === "top";
+  let verificaPosicao = true;
+
+  if (images.detailPositon?.tablet === "left") {
+    verificaPosicao = false;
+  } else {
+    verificaPosicao = true;
+  }
 
   const classes = [
-    // height classes
-    height?.mobile ? `h-[${height.mobile}px]` : "h-full",
-    height?.tablet ? `md:h-[${height.tablet}px]` : "md:h-full",
-    height?.desktop ? `lg:h-[${height.desktop}px]` : "lg:h-full",
-
     // paddings
-    "p-8",
-
+    "pt-10",
+    "px-4",
+    "pb-0",
+    images.desejaEncostarAImagemNoCanto
+      ? verificaPosicao ? "sm:pr-0" : "sm:pl-0"
+      : "",
+    "xl:pt-0",
     // positioning
     "flex",
     "flex-col",
@@ -214,11 +185,13 @@ function generateInnerContainerClasses(props: Props) {
     "w-full",
     "relative",
     "items-center",
-    "max-w-[1320px]",
+    "2xl:max-w-[1320px]",
+    "xl:max-w-[1180px]",
     "justify-between",
+    "sm:gap-8",
 
     // positioning
-    isTabletDetailOnRight ? "md:flex-row" : "md:flex-row-reverse",
+    isTabletDetailOnRight ? "sm:flex-row" : "sm:flex-row-reverse",
     isDesktopDetailOnRight ? "lg:flex-row" : "lg:flex-row-reverse",
     isMobileDetailOnTop ? "flex-col-reverse" : "flex-col",
   ];
@@ -226,48 +199,29 @@ function generateInnerContainerClasses(props: Props) {
   return classes.join(" ");
 }
 
-function generateBackgroundImageClasses(props: Props) {
-  const { height } = props;
-
-  const classes = [
-    // height classes
-    "w-full",
-    height?.mobile ? `h-[${height.mobile}px]` : "h-full",
-    height?.tablet ? `md:h-[${height.tablet}px]` : "md:h-full",
-    height?.desktop ? `lg:h-[${height.desktop}px]` : "lg:h-full",
-
-    // positioning
-    "absolute",
-    "top-0",
-    "left-0",
-    "z-0",
-  ];
-
-  return classes.join(" ");
-}
-
 function generateTitleClasses(props: Props) {
-  const { hideDescriptionOnMobile } = props;
-
   const classes = [
-    hideDescriptionOnMobile ? "text-center" : "text-left",
-    hideDescriptionOnMobile ? "text-2xl" : "text-3xl",
+    "text-left",
+    "text-3xl",
     "font-title",
+    "leading-[1.2]",
+    "sm:text-[calc(1.4rem+1.8vw)]",
     "md:text-4xl",
     "md:text-left",
+    "lg:leading-[1.2]",
+    "lg:text-[calc(1.425rem+2.1vw)]",
+    "2xl:text-[48px]",
   ];
 
   return classes.join(" ");
 }
 
 function generateDescriptionClasses(props: Props) {
-  const { hideDescriptionOnMobile } = props;
-
   const classes = [
-    hideDescriptionOnMobile ? "hidden" : "block",
-    "md:block",
     "text-lg",
-    "md:text-2xl",
+    "leading-[1.2]",
+    "md:block",
+    "xl:max-w-[480px]",
   ];
 
   return classes.join(" ");
@@ -277,9 +231,12 @@ function generateDetailClasses(props: Props) {
   const { images } = props;
 
   const classes = [
+    "max-w-[250px]",
+    "sm:max-w-[350px]",
+    "lg:max-w-[470px]",
+    "xl:max-w-[560px]",
     "mt-6",
     "md:mt-0",
-    "md:mx-12",
     images.detailClasses,
   ];
 

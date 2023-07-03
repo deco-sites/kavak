@@ -7321,7 +7321,7 @@
       "type": "object",
       "properties": {
         "title": {
-          "type": "string",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
           "title": "Title"
         },
         "description": {
@@ -7355,7 +7355,7 @@
           "default": "blue",
           "title": "Theme"
         },
-        "actions": {
+        "button": {
           "type": "object",
           "properties": {
             "primary": {
@@ -7396,85 +7396,26 @@
             }
           },
           "required": [],
-          "title": "Actions"
-        },
-        "height": {
-          "type": "object",
-          "properties": {
-            "desktop": {
-              "type": [
-                "number",
-                "null"
-              ],
-              "title": "Desktop"
-            },
-            "tablet": {
-              "type": [
-                "number",
-                "null"
-              ],
-              "title": "Tablet"
-            },
-            "mobile": {
-              "type": [
-                "number",
-                "null"
-              ],
-              "title": "Mobile"
-            }
-          },
-          "required": [],
-          "title": "Height",
-          "description": "value in pixels"
+          "title": "Button"
         },
         "images": {
           "type": "object",
           "properties": {
-            "background": {
-              "type": "object",
-              "properties": {
-                "desktop": {
-                  "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-                  "title": "Desktop"
-                },
-                "tablet": {
-                  "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-                  "title": "Tablet"
-                },
-                "mobile": {
-                  "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-                  "title": "Mobile"
-                }
-              },
-              "required": [
-                "desktop",
-                "tablet",
-                "mobile"
-              ],
-              "title": "Background"
+            "desktop": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Desktop"
             },
-            "detail": {
-              "type": "object",
-              "properties": {
-                "desktop": {
-                  "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-                  "title": "Desktop"
-                },
-                "tablet": {
-                  "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-                  "title": "Tablet"
-                },
-                "mobile": {
-                  "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-                  "title": "Mobile"
-                }
-              },
-              "required": [
-                "desktop",
-                "tablet",
-                "mobile"
-              ],
-              "title": "Detail"
+            "tablet": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Tablet"
+            },
+            "mobile": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Mobile"
+            },
+            "alt": {
+              "type": "string",
+              "title": "Alt"
             },
             "detailClasses": {
               "type": [
@@ -7535,9 +7476,21 @@
                 "mobile"
               ],
               "title": "Detail Positon"
+            },
+            "desejaEncostarAImagemNoCanto": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Deseja Encostar A Imagem No Canto"
             }
           },
-          "required": [],
+          "required": [
+            "desktop",
+            "tablet",
+            "mobile",
+            "alt"
+          ],
           "title": "Images"
         }
       },
@@ -7546,7 +7499,7 @@
         "description",
         "fcp",
         "theme",
-        "actions",
+        "button",
         "images"
       ],
       "title": "deco-sites/kavak/components/Hero.tsx@Props"
