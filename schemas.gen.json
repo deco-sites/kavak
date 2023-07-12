@@ -6371,6 +6371,10 @@
             {
               "type": "string",
               "const": "Linkedin"
+            },
+            {
+              "type": "string",
+              "const": "Check"
             }
           ],
           "type": "string",
@@ -6470,6 +6474,10 @@
             {
               "type": "string",
               "const": "Linkedin"
+            },
+            {
+              "type": "string",
+              "const": "Check"
             }
           ],
           "type": "string",
@@ -6522,6 +6530,13 @@
             "labelButton": {
               "type": "string",
               "title": "Label Button"
+            },
+            "abrirEmNovaAba": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Abrir Em Nova Aba"
             }
           },
           "required": [
@@ -7287,6 +7302,10 @@
                   {
                     "type": "string",
                     "const": "Linkedin"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Check"
                   }
                 ],
                 "type": "string",
