@@ -15,7 +15,8 @@ export type AvailableIcons =
   | "Instagram"
   | "Share"
   | "DoubleChevron"
-  | "Linkedin";
+  | "Linkedin"
+  | "Check";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
