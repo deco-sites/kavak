@@ -6410,6 +6410,96 @@
       },
       "title": "Link[]"
     },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlYWRlci50c3g=@Country": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "ChevronLeft"
+            },
+            {
+              "type": "string",
+              "const": "ChevronRight"
+            },
+            {
+              "type": "string",
+              "const": "ChevronUp"
+            },
+            {
+              "type": "string",
+              "const": "ChevronDown"
+            },
+            {
+              "type": "string",
+              "const": "User"
+            },
+            {
+              "type": "string",
+              "const": "Bars3"
+            },
+            {
+              "type": "string",
+              "const": "XMark"
+            },
+            {
+              "type": "string",
+              "const": "Logo"
+            },
+            {
+              "type": "string",
+              "const": "Brasil"
+            },
+            {
+              "type": "string",
+              "const": "Facebook"
+            },
+            {
+              "type": "string",
+              "const": "Instagram"
+            },
+            {
+              "type": "string",
+              "const": "Share"
+            },
+            {
+              "type": "string",
+              "const": "DoubleChevron"
+            },
+            {
+              "type": "string",
+              "const": "Linkedin"
+            }
+          ],
+          "type": "string",
+          "title": "Icon"
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Label"
+        },
+        "href": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Href"
+        }
+      },
+      "required": [],
+      "title": "Country"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlYWRlci50c3g=@Country[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlYWRlci50c3g=@Country"
+      },
+      "title": "Country[]"
+    },
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlYWRlci50c3g=@Props": {
       "type": "object",
       "properties": {
@@ -6417,10 +6507,34 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlYWRlci50c3g=@Link[]",
           "description": "label or icon must be declared",
           "title": "Links"
+        },
+        "popupIdiomas": {
+          "type": "object",
+          "properties": {
+            "titlePopup": {
+              "type": "string",
+              "title": "Title Popup"
+            },
+            "Countries": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlYWRlci50c3g=@Country[]",
+              "title": " Countries"
+            },
+            "labelButton": {
+              "type": "string",
+              "title": "Label Button"
+            }
+          },
+          "required": [
+            "titlePopup",
+            "Countries",
+            "labelButton"
+          ],
+          "title": "Popup Idiomas"
         }
       },
       "required": [
-        "links"
+        "links",
+        "popupIdiomas"
       ],
       "title": "deco-sites/kavak/components/Header.tsx@Props"
     },
