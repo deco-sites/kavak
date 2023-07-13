@@ -22,8 +22,9 @@ import * as $$$$$$$$9 from "./sections/Footer.tsx";
 import * as $$$$$$$$10 from "./sections/Head.tsx";
 import * as $$$$$$$$11 from "./sections/Header.tsx";
 import * as $$$$$$$$12 from "./sections/Hero.tsx";
-import * as $$$$$$$$13 from "./sections/HeroSellCar.tsx";
-import * as $$$$$$$$14 from "./sections/StoreCards.tsx";
+import * as $$$$$$$$13 from "./sections/HeroAppKavak.tsx";
+import * as $$$$$$$$14 from "./sections/HeroSellCar.tsx";
+import * as $$$$$$$$15 from "./sections/StoreCards.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -156,8 +157,9 @@ const manifest = {
     "deco-sites/kavak/sections/Head.tsx": $$$$$$$$10,
     "deco-sites/kavak/sections/Header.tsx": $$$$$$$$11,
     "deco-sites/kavak/sections/Hero.tsx": $$$$$$$$12,
-    "deco-sites/kavak/sections/HeroSellCar.tsx": $$$$$$$$13,
-    "deco-sites/kavak/sections/StoreCards.tsx": $$$$$$$$14,
+    "deco-sites/kavak/sections/HeroAppKavak.tsx": $$$$$$$$13,
+    "deco-sites/kavak/sections/HeroSellCar.tsx": $$$$$$$$14,
+    "deco-sites/kavak/sections/StoreCards.tsx": $$$$$$$$15,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$3,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$4,
     "deco-sites/std/sections/configOCC.global.tsx": i2$$$$5,

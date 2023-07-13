@@ -79,8 +79,10 @@
               "deco-sites/kavak/sections/Faq.tsx",
               "deco-sites/kavak/sections/Features.tsx",
               "deco-sites/kavak/sections/Footer.tsx",
+              "deco-sites/kavak/sections/Head.tsx",
               "deco-sites/kavak/sections/Header.tsx",
               "deco-sites/kavak/sections/Hero.tsx",
+              "deco-sites/kavak/sections/HeroAppKavak.tsx",
               "deco-sites/kavak/sections/HeroSellCar.tsx",
               "deco-sites/kavak/sections/StoreCards.tsx",
               "deco-sites/std/sections/Analytics.tsx",
@@ -7485,6 +7487,54 @@
       ],
       "title": "deco-sites/kavak/components/Footer.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPage",
+          "title": "Page"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "On post detail page should be blank",
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "On post detail page should be blank",
+          "title": "Description"
+        },
+        "url": {
+          "type": "string",
+          "title": "Url"
+        },
+        "imageUrl": {
+          "type": "string",
+          "title": "Image Url"
+        },
+        "faviconUrl": {
+          "type": "string",
+          "title": "Favicon Url"
+        },
+        "themeColor": {
+          "type": "string",
+          "title": "Theme Color"
+        }
+      },
+      "required": [
+        "url",
+        "imageUrl",
+        "faviconUrl",
+        "themeColor"
+      ],
+      "title": "deco-sites/kavak/sections/Head.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm8udHN4@Props": {
       "type": "object",
       "properties": {
@@ -7671,6 +7721,98 @@
         "images"
       ],
       "title": "deco-sites/kavak/components/Hero.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9BcHBLYXZhay50c3g=@Banner": {
+      "type": "object",
+      "properties": {
+        "srcMobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Mobile"
+        },
+        "srcTablet": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Tablet"
+        },
+        "srcDesktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Desktop"
+        },
+        "alt": {
+          "type": "string",
+          "title": "Alt"
+        }
+      },
+      "required": [
+        "srcMobile",
+        "srcTablet",
+        "alt"
+      ],
+      "title": "Banner"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9BcHBLYXZhay50c3g=@ButtonApp": {
+      "type": "object",
+      "properties": {
+        "imgButton": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Img Button"
+        },
+        "alt": {
+          "type": "string",
+          "title": "Alt"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "imgButton",
+        "alt",
+        "href"
+      ],
+      "title": "ButtonApp"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9BcHBLYXZhay50c3g=@ButtonApp[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9BcHBLYXZhay50c3g=@ButtonApp"
+      },
+      "title": "ButtonApp[]"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9BcHBLYXZhay50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "priorizarCarregamento": {
+          "type": "boolean",
+          "description": "Selecione caso queira priorizar o carregamento da imagem",
+          "title": "Priorizar Carregamento"
+        },
+        "banner": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9BcHBLYXZhay50c3g=@Banner",
+          "default": "false",
+          "title": "Banner"
+        },
+        "buttonApp": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9BcHBLYXZhay50c3g=@ButtonApp[]",
+          "title": "Button App"
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "priorizarCarregamento",
+        "banner",
+        "buttonApp"
+      ],
+      "title": "deco-sites/kavak/components/HeroAppKavak.tsx@Props"
     },
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9TZWxsQ2FyLnRzeA==@TextDescription": {
       "type": "object",
@@ -10080,6 +10222,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==": {
+      "title": "deco-sites/kavak/sections/Head.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/kavak/sections/Head.tsx"
+          ],
+          "default": "deco-sites/kavak/sections/Head.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkZXIudHN4": {
       "title": "deco-sites/kavak/sections/Header.tsx",
       "type": "object",
@@ -10119,6 +10282,27 @@
             "deco-sites/kavak/sections/Hero.tsx"
           ],
           "default": "deco-sites/kavak/sections/Hero.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZXJvQXBwS2F2YWsudHN4": {
+      "title": "deco-sites/kavak/sections/HeroAppKavak.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm9BcHBLYXZhay50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/kavak/sections/HeroAppKavak.tsx"
+          ],
+          "default": "deco-sites/kavak/sections/HeroAppKavak.tsx"
         }
       }
     },
@@ -11163,10 +11347,16 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9Gb290ZXIudHN4"
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA=="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkZXIudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZXJvLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZXJvQXBwS2F2YWsudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZXJvU2VsbENhci50c3g="
