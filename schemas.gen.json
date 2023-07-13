@@ -76,6 +76,7 @@
               "deco-sites/kavak/sections/BlogPosts.tsx",
               "deco-sites/kavak/sections/BlogSection.tsx",
               "deco-sites/kavak/sections/BlogTopPlaces.tsx",
+              "deco-sites/kavak/sections/Faq.tsx",
               "deco-sites/kavak/sections/Features.tsx",
               "deco-sites/kavak/sections/Footer.tsx",
               "deco-sites/kavak/sections/Header.tsx",
@@ -6370,6 +6371,10 @@
             {
               "type": "string",
               "const": "Linkedin"
+            },
+            {
+              "type": "string",
+              "const": "Check"
             }
           ],
           "type": "string",
@@ -6409,6 +6414,100 @@
       },
       "title": "Link[]"
     },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlYWRlci50c3g=@Country": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "ChevronLeft"
+            },
+            {
+              "type": "string",
+              "const": "ChevronRight"
+            },
+            {
+              "type": "string",
+              "const": "ChevronUp"
+            },
+            {
+              "type": "string",
+              "const": "ChevronDown"
+            },
+            {
+              "type": "string",
+              "const": "User"
+            },
+            {
+              "type": "string",
+              "const": "Bars3"
+            },
+            {
+              "type": "string",
+              "const": "XMark"
+            },
+            {
+              "type": "string",
+              "const": "Logo"
+            },
+            {
+              "type": "string",
+              "const": "Brasil"
+            },
+            {
+              "type": "string",
+              "const": "Facebook"
+            },
+            {
+              "type": "string",
+              "const": "Instagram"
+            },
+            {
+              "type": "string",
+              "const": "Share"
+            },
+            {
+              "type": "string",
+              "const": "DoubleChevron"
+            },
+            {
+              "type": "string",
+              "const": "Linkedin"
+            },
+            {
+              "type": "string",
+              "const": "Check"
+            }
+          ],
+          "type": "string",
+          "title": "Icon"
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Label"
+        },
+        "href": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Href"
+        }
+      },
+      "required": [],
+      "title": "Country"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlYWRlci50c3g=@Country[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlYWRlci50c3g=@Country"
+      },
+      "title": "Country[]"
+    },
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlYWRlci50c3g=@Props": {
       "type": "object",
       "properties": {
@@ -6416,10 +6515,41 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlYWRlci50c3g=@Link[]",
           "description": "label or icon must be declared",
           "title": "Links"
+        },
+        "popupIdiomas": {
+          "type": "object",
+          "properties": {
+            "titlePopup": {
+              "type": "string",
+              "title": "Title Popup"
+            },
+            "Countries": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlYWRlci50c3g=@Country[]",
+              "title": " Countries"
+            },
+            "labelButton": {
+              "type": "string",
+              "title": "Label Button"
+            },
+            "abrirEmNovaAba": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Abrir Em Nova Aba"
+            }
+          },
+          "required": [
+            "titlePopup",
+            "Countries",
+            "labelButton"
+          ],
+          "title": "Popup Idiomas"
         }
       },
       "required": [
-        "links"
+        "links",
+        "popupIdiomas"
       ],
       "title": "deco-sites/kavak/components/Header.tsx@Props"
     },
@@ -7020,6 +7150,89 @@
       ],
       "title": "deco-sites/kavak/components/blog/BlogTopPlaces.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9GYXEudHN4@Question": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "type": "string",
+          "title": "Question"
+        },
+        "answer": {
+          "type": "string",
+          "format": "html",
+          "title": "Answer"
+        }
+      },
+      "required": [
+        "question",
+        "answer"
+      ],
+      "title": "Question"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9GYXEudHN4@Question[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9GYXEudHN4@Question"
+      },
+      "title": "Question[]"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9GYXEudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "questions": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9GYXEudHN4@Question[]",
+          "title": "Questions"
+        },
+        "layout": {
+          "type": "object",
+          "properties": {
+            "variation": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Compact"
+                },
+                {
+                  "type": "string",
+                  "const": "Full"
+                },
+                {
+                  "type": "string",
+                  "const": "Side to side"
+                }
+              ],
+              "type": "string",
+              "title": "Variation"
+            },
+            "headerAlignment": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "center"
+                },
+                {
+                  "type": "string",
+                  "const": "left"
+                }
+              ],
+              "type": "string",
+              "title": "Header Alignment"
+            }
+          },
+          "required": [],
+          "title": "Layout"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/kavak/sections/Faq.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0ZlYXR1cmVzLnRzeA==@Props": {
       "type": "object",
       "properties": {
@@ -7172,6 +7385,10 @@
                   {
                     "type": "string",
                     "const": "Linkedin"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Check"
                   }
                 ],
                 "type": "string",
@@ -9800,6 +10017,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9GYXEudHN4": {
+      "title": "deco-sites/kavak/sections/Faq.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9GYXEudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/kavak/sections/Faq.tsx"
+          ],
+          "default": "deco-sites/kavak/sections/Faq.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9GZWF0dXJlcy50c3g=": {
       "title": "deco-sites/kavak/sections/Features.tsx",
       "type": "object",
@@ -10914,6 +11152,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9CbG9nVG9wUGxhY2VzLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9GYXEudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9GZWF0dXJlcy50c3g="
