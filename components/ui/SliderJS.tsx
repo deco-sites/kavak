@@ -4,6 +4,7 @@ interface Props {
   rootId: string;
   behavior?: "smooth" | "auto";
   interval?: number;
+  infinite?: boolean;
 }
 
 const ATTRIBUTES = {
@@ -16,7 +17,7 @@ const ATTRIBUTES = {
 
 // Percentage of the item that has to be inside the container
 // for it it be considered as inside the container
-const THRESHOLD = 0.6;
+const THRESHOLD = 0.7;
 
 const intersectionX = (element: DOMRect, container: DOMRect): number => {
   const delta = container.width / 1_000;
@@ -45,7 +46,7 @@ const isHTMLElement = (x: Element): x is HTMLElement =>
   // deno-lint-ignore no-explicit-any
   typeof (x as any).offsetLeft === "number";
 
-const setup = ({ rootId, behavior, interval }: Props) => {
+const setup = ({ rootId, behavior, interval, infinite }: Props) => {
   const root = document.getElementById(rootId);
   const slider = root?.querySelector(`[${ATTRIBUTES["data-slider"]}]`);
   const items = root?.querySelectorAll(`[${ATTRIBUTES["data-slider-item"]}]`);
@@ -56,7 +57,7 @@ const setup = ({ rootId, behavior, interval }: Props) => {
   if (!root || !slider || !items || items.length === 0) {
     console.warn(
       "Missing necessary slider attributes. It will not work as intended. Necessary elements:",
-      { root, slider, items, rootId },
+      { root, slider, items },
     );
 
     return;
@@ -97,47 +98,46 @@ const setup = ({ rootId, behavior, interval }: Props) => {
     slider.scrollTo({
       top: 0,
       behavior,
-      left: item.offsetLeft - root.offsetLeft,
+      left: item.offsetLeft -
+        ((prev?.parentElement as HTMLElement)?.offsetLeft || root.offsetLeft),
     });
   };
 
   const onClickPrev = () => {
     const indices = getElementsInsideContainer();
-    // Wow! items per page is how many elements are being displayed inside the container!!
-    const itemsPerPage = indices.length;
-
     const isShowingFirst = indices[0] === 0;
-    const pageIndex = Math.floor(indices[indices.length - 1] / itemsPerPage);
-
-    goToItem(
-      isShowingFirst ? items.length - 1 : (pageIndex - 1) * itemsPerPage,
-    );
+    isShowingFirst
+      ? (infinite ? goToItem(items.length - 1) : null)
+      : goToItem(indices[0] - 1);
   };
 
   const onClickNext = () => {
     const indices = getElementsInsideContainer();
-    // Wow! items per page is how many elements are being displayed inside the container!!
-    const itemsPerPage = indices.length;
-
     const isShowingLast = indices[indices.length - 1] === items.length - 1;
-    const pageIndex = Math.floor(indices[0] / itemsPerPage);
-
-    goToItem(isShowingLast ? 0 : (pageIndex + 1) * itemsPerPage);
+    isShowingLast ? (infinite ? goToItem(0) : null) : goToItem(indices[0] + 1);
   };
 
   const observer = new IntersectionObserver(
-    (items) =>
-      items.forEach((item) => {
-        const index =
-          Number(item.target.getAttribute(ATTRIBUTES["data-slider-item"])) || 0;
-        const dot = dots?.item(index);
-
-        if (item.isIntersecting) {
-          dot?.setAttribute("disabled", "");
-        } else {
-          dot?.removeAttribute("disabled");
-        }
-      }),
+    (itemsObs) => {
+      const item = itemsObs[0];
+      const isFirstItem =
+        Number(item.target.getAttribute(ATTRIBUTES["data-slider-item"])) === 0;
+      const isLastItem =
+        Number(item.target.getAttribute(ATTRIBUTES["data-slider-item"])) ===
+          (items.length - 1);
+      if (isFirstItem) {
+        const isShowingFirst = item.isIntersecting;
+        isShowingFirst
+          ? prev?.parentElement?.classList.add("opacity-0", "invisible")
+          : prev?.parentElement?.classList.remove("opacity-0", "invisible");
+      }
+      if (isLastItem) {
+        const isShowingLast = item.isIntersecting;
+        isShowingLast
+          ? next?.parentElement?.classList.add("opacity-0", "invisible")
+          : next?.parentElement?.classList.remove("opacity-0", "invisible");
+      }
+    },
     { threshold: THRESHOLD, root: slider },
   );
 
@@ -167,14 +167,17 @@ const setup = ({ rootId, behavior, interval }: Props) => {
   };
 };
 
-function Slider({ rootId, behavior = "smooth", interval }: Props) {
-  useEffect(() => setup({ rootId, behavior, interval }), [
+function SliderJS(
+  { rootId, behavior = "smooth", interval, infinite = false }: Props,
+) {
+  useEffect(() => setup({ rootId, behavior, interval, infinite }), [
     rootId,
     behavior,
     interval,
+    infinite,
   ]);
 
   return <div data-slider-controller-js />;
 }
 
-export default Slider;
+export default SliderJS;

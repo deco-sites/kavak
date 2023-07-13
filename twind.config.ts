@@ -2,6 +2,9 @@
 export default {
   theme: {
     extend: {
+      gridTemplateColumns: {
+        "carousel": "48px 1fr 48px",
+      },
       screens: {
         sm: "576px",
         md: "768px",

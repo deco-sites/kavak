@@ -1,16 +1,16 @@
 import { Children } from "preact/compat";
 import type { JSX } from "preact";
 
-type SliderProps = JSX.IntrinsicElements["ul"] & {
+type Props = JSX.IntrinsicElements["ul"] & {
   snap?: string;
 };
 
-export function Slider({
+function Slider({
   children,
-  snap = "scroll-snap-center",
+  snap = "snap-center",
   class: _class = "gap-6 scrollbar-none",
   ...props
-}: SliderProps) {
+}: Props) {
   return (
     <ul
       data-slider
@@ -29,24 +29,4 @@ export function Slider({
   );
 }
 
-type SliderDotsProps = JSX.IntrinsicElements["ol"];
-
-export function SliderDots({ children, class: _class }: SliderDotsProps) {
-  return (
-    <ol
-      class={`flex items-center justify-center overflow-auto overscroll-contain snap-x snap-mandatory ${_class}`}
-    >
-      {Children.map(children, (child, index) => (
-        <li class="scroll-snap-center">
-          <button
-            data-dot={index}
-            aria-label={`go to slider item ${index}`}
-            class="focus:outline-none group"
-          >
-            {child}
-          </button>
-        </li>
-      ))}
-    </ol>
-  );
-}
+export default Slider;
