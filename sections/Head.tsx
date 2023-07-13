@@ -46,6 +46,7 @@ export default function HeadComponent({
       <meta property="og:image" content={imageUrl} />
       <link rel="shortcut icon" href={faviconUrl} type="image/x-icon" />
       <link rel="stylesheet" type="text/css" href="/style.css"></link>
+
       <style
         dangerouslySetInnerHTML={{
           __html: `
