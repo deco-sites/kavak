@@ -34,7 +34,7 @@
 	</symbol>
 	<symbol id="ChevronDown"
 		xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-		<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+		<path stroke-linecap="round" stroke-width="2.5" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
 	</symbol>
 	<symbol id="User" viewBox="0 0 512 512" fill="currentColor"
 		xmlns="http://www.w3.org/2000/svg">

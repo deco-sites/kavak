@@ -16,13 +16,14 @@ import * as $$$$$$$$3 from "./sections/BlogPostDetail.tsx";
 import * as $$$$$$$$4 from "./sections/BlogPosts.tsx";
 import * as $$$$$$$$5 from "./sections/BlogSection.tsx";
 import * as $$$$$$$$6 from "./sections/BlogTopPlaces.tsx";
-import * as $$$$$$$$7 from "./sections/Features.tsx";
-import * as $$$$$$$$8 from "./sections/Footer.tsx";
-import * as $$$$$$$$9 from "./sections/Head.tsx";
-import * as $$$$$$$$10 from "./sections/Header.tsx";
-import * as $$$$$$$$11 from "./sections/Hero.tsx";
-import * as $$$$$$$$12 from "./sections/HeroSellCar.tsx";
-import * as $$$$$$$$13 from "./sections/StoreCards.tsx";
+import * as $$$$$$$$7 from "./sections/Faq.tsx";
+import * as $$$$$$$$8 from "./sections/Features.tsx";
+import * as $$$$$$$$9 from "./sections/Footer.tsx";
+import * as $$$$$$$$10 from "./sections/Head.tsx";
+import * as $$$$$$$$11 from "./sections/Header.tsx";
+import * as $$$$$$$$12 from "./sections/Hero.tsx";
+import * as $$$$$$$$13 from "./sections/HeroSellCar.tsx";
+import * as $$$$$$$$14 from "./sections/StoreCards.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -149,13 +150,14 @@ const manifest = {
     "deco-sites/kavak/sections/BlogPosts.tsx": $$$$$$$$4,
     "deco-sites/kavak/sections/BlogSection.tsx": $$$$$$$$5,
     "deco-sites/kavak/sections/BlogTopPlaces.tsx": $$$$$$$$6,
-    "deco-sites/kavak/sections/Features.tsx": $$$$$$$$7,
-    "deco-sites/kavak/sections/Footer.tsx": $$$$$$$$8,
-    "deco-sites/kavak/sections/Head.tsx": $$$$$$$$9,
-    "deco-sites/kavak/sections/Header.tsx": $$$$$$$$10,
-    "deco-sites/kavak/sections/Hero.tsx": $$$$$$$$11,
-    "deco-sites/kavak/sections/HeroSellCar.tsx": $$$$$$$$12,
-    "deco-sites/kavak/sections/StoreCards.tsx": $$$$$$$$13,
+    "deco-sites/kavak/sections/Faq.tsx": $$$$$$$$7,
+    "deco-sites/kavak/sections/Features.tsx": $$$$$$$$8,
+    "deco-sites/kavak/sections/Footer.tsx": $$$$$$$$9,
+    "deco-sites/kavak/sections/Head.tsx": $$$$$$$$10,
+    "deco-sites/kavak/sections/Header.tsx": $$$$$$$$11,
+    "deco-sites/kavak/sections/Hero.tsx": $$$$$$$$12,
+    "deco-sites/kavak/sections/HeroSellCar.tsx": $$$$$$$$13,
+    "deco-sites/kavak/sections/StoreCards.tsx": $$$$$$$$14,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$3,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$4,
     "deco-sites/std/sections/configOCC.global.tsx": i2$$$$5,
