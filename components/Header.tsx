@@ -93,7 +93,7 @@ export default function Header(props: Props) {
             </ul>
             <a
               href={linkHref}
-              target={`${props.popupIdiomas.abrirEmNovaAba ? "_blank" : ""}`}
+              target={`${props.popupIdiomas?.abrirEmNovaAba ? "_blank" : ""}`}
               class={`flex items-center justify-center h-[46px] py-2 bg-primary-dark text-white rounded-lg`}
             >
               <span>

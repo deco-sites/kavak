@@ -79,6 +79,7 @@
               "deco-sites/kavak/sections/Faq.tsx",
               "deco-sites/kavak/sections/Features.tsx",
               "deco-sites/kavak/sections/Footer.tsx",
+              "deco-sites/kavak/sections/Head.tsx",
               "deco-sites/kavak/sections/Header.tsx",
               "deco-sites/kavak/sections/Hero.tsx",
               "deco-sites/kavak/sections/HeroSellCar.tsx",
@@ -7485,6 +7486,54 @@
       ],
       "title": "deco-sites/kavak/components/Footer.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPage",
+          "title": "Page"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "On post detail page should be blank",
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "On post detail page should be blank",
+          "title": "Description"
+        },
+        "url": {
+          "type": "string",
+          "title": "Url"
+        },
+        "imageUrl": {
+          "type": "string",
+          "title": "Image Url"
+        },
+        "faviconUrl": {
+          "type": "string",
+          "title": "Favicon Url"
+        },
+        "themeColor": {
+          "type": "string",
+          "title": "Theme Color"
+        }
+      },
+      "required": [
+        "url",
+        "imageUrl",
+        "faviconUrl",
+        "themeColor"
+      ],
+      "title": "deco-sites/kavak/sections/Head.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm8udHN4@Props": {
       "type": "object",
       "properties": {
@@ -10080,6 +10129,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==": {
+      "title": "deco-sites/kavak/sections/Head.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/kavak/sections/Head.tsx"
+          ],
+          "default": "deco-sites/kavak/sections/Head.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkZXIudHN4": {
       "title": "deco-sites/kavak/sections/Header.tsx",
       "type": "object",
@@ -11161,6 +11231,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9Gb290ZXIudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkZXIudHN4"
