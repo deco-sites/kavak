@@ -1,4 +1,4 @@
-import { BlogSectionPlaces } from "deco-sites/std/commerce/butterCMS/types.ts";
+import { BlogSectionPlaces } from "../../../std/commerce/butterCMS/types.ts";
 import { SectionTitle } from "deco-sites/kavak/components/ui/SectionTitle.tsx";
 
 export function BlogPlaces({ title, places }: BlogSectionPlaces) {

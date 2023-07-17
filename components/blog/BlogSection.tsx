@@ -5,7 +5,7 @@ import type {
   BlogPostPreview,
   BlogSectionPosts,
   FieldTypes,
-} from "deco-sites/std/commerce/butterCMS/types.ts";
+} from "../../std/commerce/butterCMS/types.ts";
 import FeaturedAds from "./sections/FeaturedAds.tsx";
 import FeaturedPosts from "./sections/FeaturedPosts.tsx";
 
