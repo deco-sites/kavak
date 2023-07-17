@@ -79,6 +79,7 @@
               "deco-sites/kavak/sections/Faq.tsx",
               "deco-sites/kavak/sections/Features.tsx",
               "deco-sites/kavak/sections/Footer.tsx",
+              "deco-sites/kavak/sections/Head.tsx",
               "deco-sites/kavak/sections/Header.tsx",
               "deco-sites/kavak/sections/Hero.tsx",
               "deco-sites/kavak/sections/HeroSellCar.tsx",
@@ -10128,6 +10129,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==": {
+      "title": "deco-sites/kavak/sections/Head.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/kavak/sections/Head.tsx"
+          ],
+          "default": "deco-sites/kavak/sections/Head.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkZXIudHN4": {
       "title": "deco-sites/kavak/sections/Header.tsx",
       "type": "object",
@@ -11209,6 +11231,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9Gb290ZXIudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkZXIudHN4"
