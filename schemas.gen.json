@@ -6282,51 +6282,11 @@
       ],
       "title": "deco-sites/std/packs/vtex/loaders/wishlist.ts@Props"
     },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Pagination": {
-      "type": "object",
-      "properties": {
-        "currentPage": {
-          "type": "number",
-          "title": "Current Page"
-        },
-        "nextPage": {
-          "type": "number",
-          "title": "Next Page"
-        },
-        "previousPage": {
-          "anyOf": [
-            {
-              "type": "number"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Previous Page"
-        },
-        "count": {
-          "type": "number",
-          "title": "Count"
-        },
-        "pageSize": {
-          "type": "number",
-          "title": "Page Size"
-        }
-      },
-      "required": [
-        "currentPage",
-        "nextPage",
-        "previousPage",
-        "count",
-        "pageSize"
-      ],
-      "title": "Pagination"
-    },
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvZ2FsbGVyeS9HYWxsZXJ5UGFnaW5hdGlvbi50c3g=@Props": {
       "type": "object",
       "properties": {
         "pagination": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Pagination",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Pagination",
           "title": "Pagination"
         },
         "containerId": {
@@ -6998,58 +6958,15 @@
       ],
       "title": "deco-sites/kavak/components/BannerInfo.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "Name"
-        },
-        "slug": {
-          "type": "string",
-          "title": "Slug"
-        }
-      },
-      "required": [
-        "name",
-        "slug"
-      ],
-      "title": "Category"
-    },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category"
-      },
-      "title": "Category[]"
-    },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPage": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "breadcrumbList": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category[]",
-          "title": "Breadcrumb List"
-        }
-      },
-      "required": [],
-      "title": "BlogPage"
-    },
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvQmxvZ0NhdGVnb3J5TWVudS50c3g=@Props": {
       "type": "object",
       "properties": {
         "categories": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category[]",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category[]",
           "title": "Categories"
         },
         "page": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPage",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPage",
           "title": "Page"
         },
         "hideTitle": {
@@ -7065,112 +6982,6 @@
       ],
       "title": "deco-sites/kavak/components/blog/BlogCategoryMenu.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@omitYm9keSxzZW8sdGFncw==BlogPost": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string",
-          "title": "Title"
-        },
-        "image": {
-          "type": "string",
-          "title": "Image"
-        },
-        "imageAlt": {
-          "type": "string",
-          "title": "Image Alt"
-        },
-        "publishedAt": {
-          "type": "string",
-          "title": "Published At"
-        },
-        "category": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category",
-          "title": "Category"
-        },
-        "slug": {
-          "type": "string",
-          "title": "Slug"
-        },
-        "author": {
-          "type": "string",
-          "title": "Author"
-        }
-      },
-      "required": [
-        "title",
-        "image",
-        "imageAlt",
-        "publishedAt",
-        "category",
-        "slug",
-        "author"
-      ],
-      "title": "omitYm9keSxzZW8sdGFncw==BlogPost"
-    },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@9a2995a069d16968ece72775e2605f51&omitYm9keSxzZW8sdGFncw==BlogPost": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@omitYm9keSxzZW8sdGFncw==BlogPost"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "summary": {
-              "type": "string",
-              "title": "Summary"
-            },
-            "ctaText": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Cta Text"
-            }
-          },
-          "required": [
-            "summary"
-          ]
-        }
-      ],
-      "title": "9a2995a069d16968ece72775e2605f51&omitYm9keSxzZW8sdGFncw==BlogPost"
-    },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@9a2995a069d16968ece72775e2605f51&omitYm9keSxzZW8sdGFncw==BlogPost[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@9a2995a069d16968ece72775e2605f51&omitYm9keSxzZW8sdGFncw==BlogPost"
-      },
-      "title": "9a2995a069d16968ece72775e2605f51&omitYm9keSxzZW8sdGFncw==BlogPost[]"
-    },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Pagination|null": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Pagination"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "title": "Pagination|null"
-    },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPostList": {
-      "type": "object",
-      "properties": {
-        "posts": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@9a2995a069d16968ece72775e2605f51&omitYm9keSxzZW8sdGFncw==BlogPost[]",
-          "title": "Posts"
-        },
-        "pagination": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Pagination|null",
-          "title": "Pagination"
-        }
-      },
-      "required": [
-        "posts",
-        "pagination"
-      ],
-      "title": "BlogPostList"
-    },
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvQmxvZ0dhbGxlcnkudHN4@Props": {
       "type": "object",
       "properties": {
@@ -7179,7 +6990,7 @@
           "title": "Title"
         },
         "list": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPostList",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPostList",
           "title": "List"
         }
       },
@@ -7189,163 +7000,23 @@
       ],
       "title": "deco-sites/kavak/components/blog/BlogGallery.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@SEO": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string",
-          "title": "Title"
-        },
-        "description": {
-          "type": "string",
-          "title": "Description"
-        }
-      },
-      "required": [
-        "title",
-        "description"
-      ],
-      "title": "SEO"
-    },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPost": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string",
-          "title": "Title"
-        },
-        "image": {
-          "type": "string",
-          "title": "Image"
-        },
-        "imageAlt": {
-          "type": "string",
-          "title": "Image Alt"
-        },
-        "publishedAt": {
-          "type": "string",
-          "title": "Published At"
-        },
-        "category": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category",
-          "title": "Category"
-        },
-        "slug": {
-          "type": "string",
-          "title": "Slug"
-        },
-        "author": {
-          "type": "string",
-          "title": "Author"
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "Tags"
-        },
-        "body": {
-          "type": "string",
-          "title": "Body"
-        },
-        "seo": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@SEO",
-          "title": "Seo"
-        }
-      },
-      "required": [
-        "title",
-        "image",
-        "imageAlt",
-        "publishedAt",
-        "category",
-        "slug",
-        "author",
-        "tags",
-        "body",
-        "seo"
-      ],
-      "title": "BlogPost"
-    },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPosts": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string",
-          "title": "Title"
-        },
-        "posts": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@9a2995a069d16968ece72775e2605f51&omitYm9keSxzZW8sdGFncw==BlogPost[]",
-          "title": "Posts"
-        }
-      },
-      "required": [
-        "title",
-        "posts"
-      ],
-      "title": "BlogSectionPosts"
-    },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPlace": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "Name"
-        },
-        "slug": {
-          "type": "string",
-          "title": "Slug"
-        }
-      },
-      "required": [
-        "name",
-        "slug"
-      ],
-      "title": "BlogPlace"
-    },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPlace[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPlace"
-      },
-      "title": "BlogPlace[]"
-    },
-    "ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPlaces": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string",
-          "title": "Title"
-        },
-        "places": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPlace[]",
-          "title": "Places"
-        }
-      },
-      "required": [
-        "title",
-        "places"
-      ],
-      "title": "BlogSectionPlaces"
-    },
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL2Jsb2cvQmxvZ1Bvc3REZXRhaWwudHN4@Props": {
       "type": "object",
       "properties": {
         "post": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPost",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPost",
           "title": "Post"
         },
         "ads": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPosts",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPosts",
           "title": "Ads"
         },
         "categories": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPlaces",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPlaces",
           "title": "Categories"
         },
         "searchTerms": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPlaces",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPlaces",
           "title": "Search Terms"
         }
       },
@@ -7425,7 +7096,7 @@
       "type": "object",
       "properties": {
         "section": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPosts",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPosts",
           "title": "Section"
         },
         "variant": {
@@ -7465,11 +7136,11 @@
       "type": "object",
       "properties": {
         "categories": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPlaces",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPlaces",
           "title": "Categories"
         },
         "searchTerms": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9rYXZhay9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPlaces",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPlaces",
           "title": "Search Terms"
         }
       },
@@ -7813,6 +7484,54 @@
         "address"
       ],
       "title": "deco-sites/kavak/components/Footer.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9rYXZhay9zZWN0aW9ucy9IZWFkLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPage",
+          "title": "Page"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "On post detail page should be blank",
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "On post detail page should be blank",
+          "title": "Description"
+        },
+        "url": {
+          "type": "string",
+          "title": "Url"
+        },
+        "imageUrl": {
+          "type": "string",
+          "title": "Image Url"
+        },
+        "faviconUrl": {
+          "type": "string",
+          "title": "Favicon Url"
+        },
+        "themeColor": {
+          "type": "string",
+          "title": "Theme Color"
+        }
+      },
+      "required": [
+        "url",
+        "imageUrl",
+        "faviconUrl",
+        "themeColor"
+      ],
+      "title": "deco-sites/kavak/sections/Head.tsx@Props"
     },
     "ZGVjby1zaXRlcy9rYXZhay9jb21wb25lbnRzL0hlcm8udHN4@Props": {
       "type": "object",
